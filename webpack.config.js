@@ -2,9 +2,12 @@ const path = require('path');
 const HWP = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, '/src/index.js'),
+  entry: {
+    'index': './src/index.js',
+    'sustainability': './src/index.js'
+  },
   output: {
-    filename: 'build.js',
+    filename: '[name].js',
     path: path.join(__dirname, '/dist'),
   },
   module: {
@@ -53,5 +56,12 @@ module.exports = {
   },
   plugins: [
     new HWP({ template: path.join(__dirname, '/src/index.html') }),
+    new HWP({
+      filename: 'sustainability/index.html',
+      template: path.join(__dirname, '/src/index.html')
+    }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };

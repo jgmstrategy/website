@@ -43,11 +43,11 @@ function Navigation() {
 
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
-            <MDBNavbarItem>
+            {/* <MDBNavbarItem>
               <MDBNavbarLink active aria-current='page' href='#'>
                 Home
               </MDBNavbarLink>
-            </MDBNavbarItem>
+            </MDBNavbarItem> */}
             <MDBNavbarItem>
               <MDBNavbarLink href='#'>Industries</MDBNavbarLink>
             </MDBNavbarItem>
@@ -58,7 +58,7 @@ function Navigation() {
               <MDBNavbarLink href='#'>Insights</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>About Us</MDBNavbarLink>
+              <MDBNavbarLink href='#'>About</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink href='#'>Careers</MDBNavbarLink>
@@ -68,6 +68,7 @@ function Navigation() {
             </MDBNavbarItem>
           </MDBNavbarNav>
 
+          <MDBIcon icon='search' />
           <form className='d-flex input-group w-auto'>
             <MDBContainer className='py-5'>
               <input
