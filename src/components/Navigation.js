@@ -1,28 +1,86 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import {
+  MDBCollapse,
+  MDBContainer,
+  MDBIcon,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBNavbarNav,
+  MDBNavbarToggler,
+} from 'mdb-react-ui-kit';
+
+import Logo from '../images/logo.png';
+import './Navigation.css';
 
 function Navigation() {
+  const [showBasic, setShowBasic] = useState(false);
+
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">JGM Consulting</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Industries</Nav.Link>
-            <Nav.Link href="#home">Services</Nav.Link>
-            <Nav.Link href="#home">Insights</Nav.Link>
-            <Nav.Link href="#home">About Us</Nav.Link>
-            <Nav.Link href="#home">Careers</Nav.Link>
-            <Nav.Link href="#home">Blog</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <MDBNavbar expand='lg' light bgColor='light'>
+      <MDBContainer fluid>
+        <MDBNavbarBrand href='#'>
+          <img
+            src={Logo}
+            height='30'
+            width='30'
+            alt='JGM Strategy Consulting logo'
+            loading='lazy'
+          />{' '}
+          JGM Strategy Consulting
+        </MDBNavbarBrand>
+
+        <MDBNavbarToggler
+          aria-controls='navbarSupportedContent'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+          onClick={() => setShowBasic(!showBasic)}
+        >
+          <MDBIcon icon='bars' fas />
+        </MDBNavbarToggler>
+
+        <MDBCollapse navbar show={showBasic}>
+          <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
+            <MDBNavbarItem>
+              <MDBNavbarLink active aria-current='page' href='#'>
+                Home
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href='#'>Industries</MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href='#'>Services</MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href='#'>Insights</MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href='#'>About Us</MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href='#'>Careers</MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href='#'>Blog</MDBNavbarLink>
+            </MDBNavbarItem>
+          </MDBNavbarNav>
+
+          <form className='d-flex input-group w-auto'>
+            <MDBContainer className='py-5'>
+              <input
+                type='search'
+                className='form-control search-click'
+                placeholder='Search insights and experts...'
+                aria-label='Search'
+              />
+            </MDBContainer>
+          </form>
+        </MDBCollapse>
+      </MDBContainer>
+    </MDBNavbar>
   );
 }
 

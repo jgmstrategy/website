@@ -1,16 +1,21 @@
 import React from 'react';
-import { createRoot } from 'react-dom';
-import Button from 'react-bootstrap/Button';
+import { createRoot } from 'react-dom/client';
+
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+
+import Home from './pages/Home';
 
 const App = () => (
   <div>
-    <Navigation></Navigation>
-    <div class="container py-4 px-3 mx-auto">
-      <h1>JGM Consulting</h1>
-      <Button variant="primary">Begin</Button>
+    <Navigation />
+    <div className="container py-4 px-3 mx-auto">
+      <Home />
     </div>
+    <Footer />
   </div>
 )
 
