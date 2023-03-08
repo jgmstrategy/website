@@ -9,30 +9,28 @@ import {
   MDBBtn
 } from 'mdb-react-ui-kit';
 
+import Logo from '../images/text_white.png';
+
 function Footer() {
   return (
     <MDBFooter className='text-center' color='white' bgColor='dark'>
       <MDBContainer className='p-4'>
         <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
           <div>
-            <span>JGM Strategy Consulting</span>
+          <img
+            src={Logo}
+            height='30'
+            alt='JGM Strategy Consulting logo'
+            loading='lazy'
+          />
           </div>
           <div>
-            <a href='' className='me-4 text-reset'>
-              <MDBIcon fab icon='facebook-f' />
-            </a>
             <a
               href='https://twitter.com/JGMStrategy'
               className='me-4 text-reset'
               target='_blank'
             >
               <MDBIcon fab icon='twitter' />
-            </a>
-            <a href='' className='me-4 text-reset'>
-              <MDBIcon fab icon='google' />
-            </a>
-            <a href='' className='me-4 text-reset'>
-              <MDBIcon fab icon='instagram' />
             </a>
             <a
               href='https://www.linkedin.com/company/jgmstrategy'

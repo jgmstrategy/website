@@ -1,10 +1,19 @@
 const path = require('path');
 const HWP = require('html-webpack-plugin');
 
+const pages = [
+  'sustainability',
+];
+
 module.exports = {
   entry: {
     'index': './src/index.js',
-    'sustainability': './src/index.js'
+    ...pages.reduce((acc, curr) => (
+      {
+        ...acc,
+        [curr]: './src/index.js'
+      }
+    ), {})
   },
   output: {
     filename: '[name].js',
@@ -56,10 +65,12 @@ module.exports = {
   },
   plugins: [
     new HWP({ template: path.join(__dirname, '/src/index.html') }),
-    new HWP({
-      filename: 'sustainability/index.html',
-      template: path.join(__dirname, '/src/index.html')
-    }),
+    ...pages.map(page => (
+      new HWP({
+        filename: `${page}/index.html`,
+        template: path.join(__dirname, '/src/index.html')
+      })
+    )),
   ],
   devServer: {
     historyApiFallback: true,

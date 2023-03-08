@@ -12,7 +12,7 @@ import {
   MDBNavbarToggler,
 } from 'mdb-react-ui-kit';
 
-import Logo from '../images/logo.png';
+import Logo from '../images/text.png';
 import './Navigation.css';
 
 function Navigation() {
@@ -21,15 +21,13 @@ function Navigation() {
   return (
     <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
-        <MDBNavbarBrand href='#'>
+        <MDBNavbarBrand href='/' className='mx-3'>
           <img
             src={Logo}
             height='30'
-            width='30'
             alt='JGM Strategy Consulting logo'
             loading='lazy'
-          />{' '}
-          JGM Strategy Consulting
+          />
         </MDBNavbarBrand>
 
         <MDBNavbarToggler
