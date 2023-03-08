@@ -2,7 +2,10 @@ const path = require('path');
 const HWP = require('html-webpack-plugin');
 
 const pages = [
+  'accessibility',
   'sustainability',
+  'terms',
+  'privacy',
 ];
 
 module.exports = {

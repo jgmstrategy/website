@@ -13,7 +13,10 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
 const Home = lazy(() => import('./routes/Home'));
+const Accessibility = lazy(() => import('./routes/Accessibility'));
 const Sustainability = lazy(() => import('./routes/Sustainability'));
+const Terms = lazy(() => import('./routes/Terms'));
+const Privacy = lazy(() => import('./routes/Privacy'));
 
 function App() {
   return (
@@ -24,7 +27,10 @@ function App() {
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route index path='/' element={<Home />} />
+              <Route path='/accessibility' element={<Accessibility />} />
               <Route path='/sustainability' element={<Sustainability />} />
+              <Route path='/terms' element={<Terms />} />
+              <Route path='/privacy' element={<Privacy />} />
             </Routes>
           </Suspense>
         </div>

@@ -82,13 +82,13 @@ function Footer() {
               <a href='/sustainability' className='text-white me-4'>
                 Sustainability
               </a>
-              <a href='#!' className='text-white me-4'>
+              <a href='/accessibility' className='text-white me-4'>
                 Accessibility statement
               </a>
-              <a href='#!' className='text-white me-4'>
+              <a href='/terms' className='text-white me-4'>
                 Terms of use
               </a>
-              <a href='#!' className='text-white me-4'>
+              <a href='/privacy' className='text-white me-4'>
                 Privacy policy
               </a>
             </div>
