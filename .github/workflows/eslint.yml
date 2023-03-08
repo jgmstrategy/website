@@ -32,7 +32,7 @@ jobs:
 
       - name: Install ESLint
         run: |
-          npm cleaninstall --verbose
+          npm ci --verbose
 
       - name: Run ESLint
         run: npx eslint .
