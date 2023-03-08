@@ -28,8 +28,8 @@ function App() {
     <Router>
       <div>
         <Navigation />
-        <div className='container py-4 px-3 mx-auto'>
-          <Suspense fallback={<div>Loading...</div>}>
+        <div>
+          <Suspense fallback={<div className='container py-4 px-3 mx-auto'>Loading...</div>}>
             <Routes>
               <Route index path='/' element={<Home />} />
               <Route path='/industries' element={<Industries />} />
