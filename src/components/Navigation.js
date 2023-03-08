@@ -61,9 +61,6 @@ function Navigation() {
             <MDBNavbarItem>
               <MDBNavbarLink href='#'>Careers</MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink href='#'>Blog</MDBNavbarLink>
-            </MDBNavbarItem>
           </MDBNavbarNav>
 
           <MDBIcon icon='search' />
