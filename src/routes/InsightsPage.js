@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import ReactMarkdown from 'react-markdown';
+import { Remark, useRemarkSync } from 'react-remark';
 
 import importDirectory from '../helper/importDirectory';
 
@@ -8,9 +8,14 @@ const pages = importDirectory(require.context('../pages', false, /\.md$/, 'lazy'
 
 function InsightsPage() {
   const location = useLocation();
-  const name = location.pathname.split('/').at(-1);
+  let name = location.pathname.split('/');
+  if (location.pathname.endsWith('/')) {
+    name = name.at(-2);
+  } else {
+    name = name.at(-1);
+  }
   
-  const [markdown, setMarkdown] = useState('');
+  const [markdown, setMarkdown] = useState(<p>failed</p>);
 
   const filename = `${name}.md`;
   if (filename in pages) {
@@ -21,7 +26,7 @@ function InsightsPage() {
   return (
     <div>
       <p>page</p>
-      <ReactMarkdown children={markdown} />
+      <Remark>{ markdown }</Remark>
     </div>
   );
 }
