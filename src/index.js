@@ -38,11 +38,10 @@ function App() {
             <Routes>
               <Route index path='/' element={<Home />} />
               <Route path='insights' element={<Insights />}>
-                <Route path='world-resource-report' element={<InsightsPage />} />
                 {
                   Object.keys(pages).map((page) => {
                     const name = page.split('.')[0];
-                    console.log(name);
+                    return <Route path={name} element={<InsightsPage />} />
                   })
                 }
               </Route>

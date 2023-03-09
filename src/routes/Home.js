@@ -13,7 +13,7 @@ function Home() {
     <div>
       <div>
         <MDBCarousel showIndicators>
-          <a href='#'>
+          <a href='/insights/patient-experience'>
             <MDBCarouselItem
               className='w-100 d-block'
               itemId={1}
@@ -35,7 +35,7 @@ function Home() {
               <p>Navigate the constantly changing logistics landscape</p>
             </MDBCarouselItem>
           </a>
-          <a href='#'>
+          <a href='/insights/diversity-and-generative-ai'>
             <MDBCarouselItem
               className='w-100 d-block'
               itemId={3}

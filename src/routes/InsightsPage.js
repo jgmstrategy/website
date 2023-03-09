@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Remark, useRemarkSync } from 'react-remark';
+import { Remark } from 'react-remark';
 
 import importDirectory from '../helper/importDirectory';
 
@@ -15,7 +15,7 @@ function InsightsPage() {
     name = name.at(-1);
   }
   
-  const [markdown, setMarkdown] = useState(<p>failed</p>);
+  const [markdown, setMarkdown] = useState(<p>either loading or failed to load</p>);
 
   const filename = `${name}.md`;
   if (filename in pages) {
@@ -25,7 +25,6 @@ function InsightsPage() {
 
   return (
     <div>
-      <p>page</p>
       <Remark>{ markdown }</Remark>
     </div>
   );
