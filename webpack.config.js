@@ -80,7 +80,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        use: ['babel-loader', 'mdx-loader']
+        use: ['raw-loader']
       }
     ],
   },
