@@ -7,6 +7,7 @@ const pages = [
   'about',
   'accessibility',
   'careers',
+  'contact',
   'industries',
   'insights',
   'privacy',

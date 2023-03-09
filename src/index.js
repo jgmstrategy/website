@@ -35,6 +35,7 @@ const Insights = lazy(() => import('./routes/Insights'));
 const InsightsPage = lazy(() => import('./routes/InsightsPage'));
 const About = lazy(() => import('./routes/About'));
 const Careers = lazy(() => import('./routes/Careers'));
+const Contact = lazy(() => import('./routes/Contact'));
 const Accessibility = lazy(() => import('./routes/Accessibility'));
 const Sustainability = lazy(() => import('./routes/Sustainability'));
 const Terms = lazy(() => import('./routes/Terms'));
@@ -77,6 +78,7 @@ function App() {
               <Route path='/about' element={<About />} />
               <Route path='/accessibility' element={<Accessibility />} />
               <Route path='/careers' element={<Careers />} />
+              <Route path='/contact' element={<Contact />} />
               <Route path='/industries' element={<Industries />} />
               <Route path='/privacy' element={<Privacy />} />
               <Route path='/services' element={<Services />} />

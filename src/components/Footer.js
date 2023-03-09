@@ -102,7 +102,7 @@ function Footer({ toggleShow }) {
         <section>
           <MDBRow>
             <div>
-              <a href='#!' className='text-white me-4'>
+              <a href='/contact' className='text-white me-4'>
                 Contact us
               </a>
               <a href='/sustainability' className='text-white me-4'>
