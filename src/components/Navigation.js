@@ -47,19 +47,19 @@ function Navigation() {
               </MDBNavbarLink>
             </MDBNavbarItem> */}
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>Industries</MDBNavbarLink>
+              <MDBNavbarLink href='/industries'>Industries</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>Services</MDBNavbarLink>
+              <MDBNavbarLink href='/services'>Services</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>Insights</MDBNavbarLink>
+              <MDBNavbarLink href='/insights'>Insights</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>About</MDBNavbarLink>
+              <MDBNavbarLink href='/about'>About</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>Careers</MDBNavbarLink>
+              <MDBNavbarLink href='/careers'>Careers</MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>
 

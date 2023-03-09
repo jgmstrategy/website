@@ -32,15 +32,17 @@ function App() {
           <Suspense fallback={<div className='container py-4 px-3 mx-auto'>Loading...</div>}>
             <Routes>
               <Route index path='/' element={<Home />} />
-              <Route path='/industries' element={<Industries />} />
-              <Route path='/services' element={<Services />} />
-              <Route path='/insights' element={<Insights />} />
+              <Route path='/insights' element={<Insights />}>
+                <Route path='world-resource-report' element={<Insights />} />
+              </Route>
               <Route path='/about' element={<About />} />
-              <Route path='/careers' element={<Careers />} />
               <Route path='/accessibility' element={<Accessibility />} />
+              <Route path='/careers' element={<Careers />} />
+              <Route path='/industries' element={<Industries />} />
+              <Route path='/privacy' element={<Privacy />} />
+              <Route path='/services' element={<Services />} />
               <Route path='/sustainability' element={<Sustainability />} />
               <Route path='/terms' element={<Terms />} />
-              <Route path='/privacy' element={<Privacy />} />
             </Routes>
           </Suspense>
         </div>

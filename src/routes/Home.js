@@ -24,7 +24,7 @@ function Home() {
               <p>Learn how we help build better lives in the dentist office</p>
             </MDBCarouselItem>
           </a>
-          <a href='#'>
+          <a href='/insights/world-resource-report'>
             <MDBCarouselItem
               className='w-100 d-block'
               itemId={2}
