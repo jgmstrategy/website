@@ -28,3 +28,5 @@ for item in listdir('dist'):
         copy(loc, '.')
     else:
         copytree(loc, item)
+
+rmtree('dist')
