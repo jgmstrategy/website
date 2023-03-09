@@ -1,6 +1,10 @@
 const path = require('path');
 const fs = require('fs');
 const HWP = require('html-webpack-plugin');
+const CWP = require('copy-webpack-plugin');
+
+const INDEX = path.join(__dirname, '/src/index.html');
+const FAVICON = path.join(__dirname, '/src/images/favicon.ico');
 
 const insights = fs.readdirSync('./src/pages').map((file) => file.split('.')[0]);
 const pages = [
@@ -86,19 +90,29 @@ module.exports = {
     ],
   },
   plugins: [
-    new HWP({ template: path.join(__dirname, '/src/index.html') }),
+    new HWP({
+      template: INDEX,
+      favicon: FAVICON
+    }),
     ...pages.map(page => (
       new HWP({
         filename: `${page}/index.html`,
-        template: path.join(__dirname, '/src/index.html')
+        template: INDEX,
+        favicon: FAVICON
       })
     )),
     ...insights.map(insight => (
       new HWP({
         filename: `insights/${insight}/index.html`,
-        template: path.join(__dirname, '/src/index.html')
+        template: INDEX,
+        favicon: FAVICON
       })
     )),
+    new CWP({
+      patterns: [
+        { from: 'src/static' }
+      ]
+    }),
   ],
   devServer: {
     historyApiFallback: true,
