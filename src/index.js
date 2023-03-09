@@ -9,6 +9,8 @@ import {
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+import importDirectory from './helper/importDirectory';
+
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
@@ -16,12 +18,15 @@ const Home = lazy(() => import('./routes/Home'));
 const Industries = lazy(() => import('./routes/Industries'));
 const Services = lazy(() => import('./routes/Services'));
 const Insights = lazy(() => import('./routes/Insights'));
+const InsightsPage = lazy(() => import('./routes/InsightsPage'));
 const About = lazy(() => import('./routes/About'));
 const Careers = lazy(() => import('./routes/Careers'));
 const Accessibility = lazy(() => import('./routes/Accessibility'));
 const Sustainability = lazy(() => import('./routes/Sustainability'));
 const Terms = lazy(() => import('./routes/Terms'));
 const Privacy = lazy(() => import('./routes/Privacy'));
+
+const pages = importDirectory(require.context('./pages', false, /\.md$/));
 
 function App() {
   return (
@@ -32,8 +37,14 @@ function App() {
           <Suspense fallback={<div className='container py-4 px-3 mx-auto'>Loading...</div>}>
             <Routes>
               <Route index path='/' element={<Home />} />
-              <Route path='/insights' element={<Insights />}>
-                <Route path='world-resource-report' element={<Insights />} />
+              <Route path='insights' element={<Insights />}>
+                <Route path='world-resource-report' element={<InsightsPage />} />
+                {
+                  Object.keys(pages).map((page) => {
+                    const name = page.split('.')[0];
+                    console.log(name);
+                  })
+                }
               </Route>
               <Route path='/about' element={<About />} />
               <Route path='/accessibility' element={<Accessibility />} />

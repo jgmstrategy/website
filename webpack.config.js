@@ -1,6 +1,8 @@
 const path = require('path');
+const fs = require('fs');
 const HWP = require('html-webpack-plugin');
 
+const insights = fs.readdirSync('./src/pages').map((file) => file.split('.')[0]);
 const pages = [
   'about',
   'accessibility',
@@ -21,11 +23,18 @@ module.exports = {
         ...acc,
         [curr]: './src/index.js'
       }
+    ), {}),
+    ...insights.reduce((acc, curr) => (
+      {
+        ...acc,
+        [`insights/${curr}`]: './src/index.js'
+      }
     ), {})
   },
   output: {
     filename: '[name].js',
     path: path.join(__dirname, '/dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -69,6 +78,10 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.md$/,
+        use: ['babel-loader', 'mdx-loader']
+      }
     ],
   },
   plugins: [
@@ -76,6 +89,12 @@ module.exports = {
     ...pages.map(page => (
       new HWP({
         filename: `${page}/index.html`,
+        template: path.join(__dirname, '/src/index.html')
+      })
+    )),
+    ...insights.map(insight => (
+      new HWP({
+        filename: `insights/${insight}/index.html`,
         template: path.join(__dirname, '/src/index.html')
       })
     )),
