@@ -1,10 +1,24 @@
-import React, { Suspense, lazy } from 'react';
+import React, { 
+  Suspense,
+  useState,
+  lazy
+} from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from 'react-router-dom';
+
+import {
+  MDBBtn,
+  MDBModal,
+  MDBModalBody,
+  MDBModalContent,
+  MDBModalDialog,
+  MDBModalHeader,
+  MDBModalTitle,
+} from 'mdb-react-ui-kit';
 
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -29,8 +43,23 @@ const Privacy = lazy(() => import('./routes/Privacy'));
 const pages = importDirectory(require.context('./pages', false, /\.md$/));
 
 function App() {
+  const [emailConfirm, setEmailConfirm] = useState(false);
+
+  const toggleShow = () => setEmailConfirm(!emailConfirm);
+
   return (
     <Router>
+      <MDBModal show={emailConfirm} tabIndex='-1' setShow={setEmailConfirm}>
+        <MDBModalDialog size='sm'>
+          <MDBModalContent>
+            <MDBModalHeader>
+              <MDBModalTitle>Welcome!</MDBModalTitle>
+              <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
+            </MDBModalHeader>
+            <MDBModalBody>Just one more thing... we need you to confirm you want to see our insights. Please open the email we sent you and confirm your subscription.</MDBModalBody>
+          </MDBModalContent>
+        </MDBModalDialog>
+      </MDBModal>
       <div>
         <Navigation />
         <div>
@@ -56,7 +85,7 @@ function App() {
             </Routes>
           </Suspense>
         </div>
-        <Footer />
+        <Footer toggleShow={toggleShow} />
       </div>
     </Router>
   )

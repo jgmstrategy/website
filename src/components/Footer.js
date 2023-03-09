@@ -1,28 +1,47 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
-  MDBFooter,
+  MDBBtn,
+  MDBCol,
   MDBContainer,
+  MDBFooter,
   MDBIcon,
   MDBInput,
-  MDBCol,
   MDBRow,
-  MDBBtn
 } from 'mdb-react-ui-kit';
 
 import Logo from '../images/text_white.png';
 
-function Footer() {
+const emailForm = 'https://docs.google.com/forms/u/3/d/e/1FAIpQLSfFPzrarHsZid29fCHc98VKfCPC5x21htyO2gOklX6mDw78nQ/formResponse';
+const emailName = 'entry.701359486';
+
+function Footer({ toggleShow }) {
+  const emailRef = useRef(null);
+
+  const onSubmit = function (e) {
+    e.preventDefault();
+
+    let formData = new FormData();
+    formData.append(emailName, emailRef.current.value);
+    emailRef.current.value = '';
+    fetch(emailForm, {
+      method: 'POST',
+      body: formData,
+    });
+
+    toggleShow();
+  };
+
   return (
     <MDBFooter className='text-center' color='white' bgColor='dark'>
       <MDBContainer className='p-4'>
         <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
           <div>
-          <img
-            src={Logo}
-            height='30'
-            alt='JGM Strategy Consulting logo'
-            loading='lazy'
-          />
+            <img
+              src={Logo}
+              height='30'
+              alt='JGM Strategy Consulting logo'
+              loading='lazy'
+            />
           </div>
           <div>
             <a
@@ -50,7 +69,7 @@ function Footer() {
         </section>
 
         <section className='mt-4'>
-          <form action=''>
+          <form onSubmit={onSubmit}>
             <MDBRow className='d-flex justify-content-center'>
               <MDBCol size='auto'>
                 <p className='pt-2'>
@@ -59,7 +78,14 @@ function Footer() {
               </MDBCol>
 
               <MDBCol md='5' start>
-                <MDBInput contrast type='email' label='Email address' className='mb-4' />
+                <MDBInput
+                  contrast
+                  ref={emailRef}
+                  name='email'
+                  type='email'
+                  label='Email address'
+                  className='mb-4'
+                />
               </MDBCol>
 
               <MDBCol size='auto'>
