@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const HWP = require('html-webpack-plugin');
 const CWP = require('copy-webpack-plugin');
+const HWPPrerender = require('html-webpack-prerender-plugin');
 
 const INDEX = path.join(__dirname, '/src/index.html');
 const FAVICON = path.join(__dirname, '/src/images/favicon.ico');
@@ -40,6 +41,7 @@ module.exports = {
     filename: '[name].js',
     path: path.join(__dirname, '/dist'),
     publicPath: '/',
+    clean: true,
   },
   module: {
     rules: [
@@ -113,6 +115,7 @@ module.exports = {
         { from: 'src/static' }
       ]
     }),
+    new HWPPrerender({ main: '#root' }),
   ],
   devServer: {
     historyApiFallback: true,
