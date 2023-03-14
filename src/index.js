@@ -3,12 +3,15 @@ import React, {
   useState,
   lazy
 } from 'react';
+import { render } from 'react-dom';
 import { createRoot } from 'react-dom/client';
+import { renderToString } from 'react-dom/server';
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom/server';
 
 import {
   MDBBtn,
@@ -93,5 +96,12 @@ function App() {
   )
 };
 
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
+const root = document.getElementById('root');
+
+if (window.__HTML_WEBPACK_JSDOM_PRERENDER_PLUGIN__) {
+  root.innerHTML = renderToString(<App />);
+} else {
+  render(<App />, root);
+}
+
+export default () => renderToString(<App />);

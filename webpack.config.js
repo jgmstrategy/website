@@ -3,8 +3,9 @@ const fs = require('fs');
 const HWP = require('html-webpack-plugin');
 const CWP = require('copy-webpack-plugin');
 const HWPPrerender = require('html-webpack-prerender-plugin');
+const HWPDomPrerender = require('html-webpack-jsdom-prerender-plugin');
 
-const INDEX = path.join(__dirname, '/src/index.html');
+const INDEX = './src/index.html';
 const FAVICON = path.join(__dirname, '/src/images/favicon.ico');
 
 const insights = fs.readdirSync('./src/pages').map((file) => file.split('.')[0]);
@@ -115,7 +116,6 @@ module.exports = {
         { from: 'src/static' }
       ]
     }),
-    new HWPPrerender({ main: '#root' }),
   ],
   devServer: {
     historyApiFallback: true,

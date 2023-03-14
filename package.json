@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/jgmstrategy/website/issues"
   },
-  "homepage": "https://github.com/jgmstrategy/website#readme",
+  "homepage": "https://jgmstrategy.com",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.3.0",
     "mdb-react-ui-kit": "^5.1.0",
@@ -35,6 +35,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
     "html-loader": "^4.2.0",
+    "html-webpack-jsdom-prerender-plugin": "^1.0.2",
     "html-webpack-plugin": "^5.5.0",
     "html-webpack-prerender-plugin": "^0.1.0",
     "raw-loader": "^4.0.2",
