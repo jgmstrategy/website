@@ -74,7 +74,7 @@ function Contact() {
                 textShadow: '2px 2px #000'
               }}
             >
-              <b>Take the next bold step with JGM &#11166;</b>
+              <b>Take the next bold step with JGM &#8594;</b>
             </span>
           </div>
         </div>
