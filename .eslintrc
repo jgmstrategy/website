@@ -1,14 +1,10 @@
 {
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "sourceType": "module",
-    "allowImportExportEverywhere": true
-  },
-  "extends": "plugin:react/recommended",
-  "env": {
-    "node": true,
-    "es6": true
-  },
+  "extends": "airbnb",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
   "rules": {
     "arrow-spacing": [
       "warn",
@@ -112,5 +108,6 @@
     "space-unary-ops": "error",
     "spaced-comment": "error",
     "yoda": "error"
-  }
+  },
+  "env": {}
 }
