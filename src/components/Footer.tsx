@@ -16,10 +16,10 @@ const emailForm = 'https://docs.google.com/forms/u/3/d/e/1FAIpQLSfFPzrarHsZid29f
 const emailName = 'entry.701359486';
 
 type FooterParams = {
-  toggleShow: () => void;
+  setEmailConfirm: (_: boolean) => void;
 };
 
-function Footer({ toggleShow }: FooterParams) {
+export default function Footer({ setEmailConfirm }: FooterParams) {
   const emailRef = useRef<HTMLInputElement>(null);
 
   const onSubmit = function (e: FormEvent) {
@@ -37,7 +37,7 @@ function Footer({ toggleShow }: FooterParams) {
       body: formData,
     });
 
-    toggleShow();
+    setEmailConfirm(true);
   };
 
   return (
@@ -111,21 +111,21 @@ function Footer({ toggleShow }: FooterParams) {
         <section>
           <MDBRow>
             <div>
-              <a href='/contact' className='text-white me-4'>
+              <Link href='/contact' className='text-white me-4'>
                 Contact us
-              </a>
-              <a href='/sustainability' className='text-white me-4'>
+              </Link>
+              <Link href='/sustainability' className='text-white me-4'>
                 Sustainability
-              </a>
-              <a href='/accessibility' className='text-white me-4'>
+              </Link>
+              <Link href='/accessibility' className='text-white me-4'>
                 Accessibility statement
-              </a>
-              <a href='/terms' className='text-white me-4'>
+              </Link>
+              <Link href='/terms' className='text-white me-4'>
                 Terms of use
-              </a>
-              <a href='/privacy' className='text-white me-4'>
+              </Link>
+              <Link href='/privacy' className='text-white me-4'>
                 Privacy policy
-              </a>
+              </Link>
             </div>
           </MDBRow>
         </section>
@@ -140,5 +140,3 @@ function Footer({ toggleShow }: FooterParams) {
     </MDBFooter>
   );
 }
-
-export default Footer;
