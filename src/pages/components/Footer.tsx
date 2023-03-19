@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { FormEvent, useRef } from 'react';
 import Image from 'next/image';
 
 import {
@@ -10,15 +10,24 @@ import {
   MDBInput,
   MDBRow,
 } from 'mdb-react-ui-kit';
+import Link from 'next/link';
 
 const emailForm = 'https://docs.google.com/forms/u/3/d/e/1FAIpQLSfFPzrarHsZid29fCHc98VKfCPC5x21htyO2gOklX6mDw78nQ/formResponse';
 const emailName = 'entry.701359486';
 
-function Footer({ toggleShow }) {
-  const emailRef = useRef(null);
+type FooterParams = {
+  toggleShow: () => void;
+};
 
-  const onSubmit = function (e) {
+function Footer({ toggleShow }: FooterParams) {
+  const emailRef = useRef<HTMLInputElement>(null);
+
+  const onSubmit = function (e: FormEvent) {
     e.preventDefault();
+
+    if (emailRef.current == null) {
+      return;
+    }
 
     let formData = new FormData();
     formData.append(emailName, emailRef.current.value);
@@ -124,9 +133,9 @@ function Footer({ toggleShow }) {
 
       <div className='p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
         &copy; 2023{' '}
-        <a className='text-white' href='/'>
+        <Link className='text-white' href='/'>
           JGM Strategy Consulting
-        </a>
+        </Link>
       </div>
     </MDBFooter>
   );
