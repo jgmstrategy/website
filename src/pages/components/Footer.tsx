@@ -1,4 +1,6 @@
 import React, { useRef } from 'react';
+import Image from 'next/image';
+
 import {
   MDBBtn,
   MDBCol,
@@ -34,11 +36,11 @@ function Footer({ toggleShow }) {
       <MDBContainer className='p-4'>
         <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
           <div>
-            <img
-              src={Logo}
-              height='30'
-              alt='JGM Strategy Consulting logo'
-              loading='lazy'
+            <Image
+              src='/logo_white.png'
+              alt=''
+              height={30}
+              width={153}
             />
           </div>
           <div>
