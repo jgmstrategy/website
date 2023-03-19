@@ -13,13 +13,34 @@ import MenuItem from '@mui/material/MenuItem';
 import SearchIcon from '@mui/icons-material/Search';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import Link from 'next/link';
+
+type PageItem = {
+  name: string;
+  href: string;
+};
 
 const pages = [
-  'Industries',
-  'Services',
-  'Insights',
-  'About',
-  'Careers'
+  {
+    name: 'Industries',
+    href: '/industries'
+  },
+  {
+    name: 'Services',
+    href: '/services'
+  },
+  {
+    name: 'Insights',
+    href: '/insights'
+  },
+  {
+    name: 'About',
+    href: '/about'
+  },
+  {
+    name: 'Careers',
+    href: '/careers'
+  }
 ];
 
 const Search = styled('div')(({ theme }) => ({
@@ -79,12 +100,14 @@ export default function Navigation() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static' color='transparent' enableColorOnDark>
         <Toolbar>
-          <Image
-            src='/logo.png'
-            alt=''
-            height={30}
-            width={153}
-          />
+          <Link href='/'>
+            <Image
+              src='/logo.png'
+              alt=''
+              height={30}
+              width={153}
+            />
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -115,24 +138,29 @@ export default function Navigation() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>{page}</Typography>
+              {pages.map(({ name, href }) => (
+                <MenuItem key={name} onClick={handleCloseNavMenu}>
+                  <Typography textAlign='center'>{name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, ml: 2 }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                color='inherit'
-                sx={{ my: 2, display: 'block', textTransform: 'none' }}
+            {pages.map(({ name, href }) => (
+              <Link
+                key={name}
+                href={href}
               >
-                {page}
-              </Button>
+                <Button
+                  key={name}
+                  onClick={handleCloseNavMenu}
+                  color='inherit'
+                  sx={{ my: 2, display: 'block', textTransform: 'none' }}
+                >
+                  {name}
+                </Button>
+              </Link>
             ))}
           </Box>
           <Search>
