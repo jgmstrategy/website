@@ -97,7 +97,7 @@ export default function Navigation() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, backgroundColor: 'white' }}>
       <AppBar position='static' color='transparent' enableColorOnDark>
         <Toolbar>
           <Link href='/'>
@@ -140,7 +140,9 @@ export default function Navigation() {
             >
               {pages.map(({ name, href }) => (
                 <MenuItem key={name} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>{name}</Typography>
+                  <Link key={name} href={href}>
+                    <Typography textAlign='center'>{name}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
