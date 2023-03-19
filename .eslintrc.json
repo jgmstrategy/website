@@ -2,6 +2,14 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "eol-last": "off",
-    "semi": "error"
+    "semi": "error",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ]
   }
 }
