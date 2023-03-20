@@ -14,7 +14,7 @@ export default function Privacy() {
         <meta name='description' content='The privacy policy for the JGM Strategy website' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
-      <Container sx={{ paddingTop: '2rem', paddingBottom: '3rem' }}>
+      <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
         <h1>Privacy Notice</h1>
         <p><i>Last updated March 20, 2023.</i></p>
         <p>

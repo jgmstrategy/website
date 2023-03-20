@@ -15,7 +15,7 @@ export default function Terms() {
         <meta name='description' content='The terms of use for interacting with the JGM Strategy consulting website' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
-      <Container sx={{ paddingTop: '2rem', paddingBottom: '3rem' }}>
+      <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
         <h1>Terms of Use</h1>
         <p><i>Last updated March 20, 2023.</i></p>
         <h2>Agreement to Our Legal Terms</h2>
