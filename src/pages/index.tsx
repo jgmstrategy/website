@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 import Box from '@mui/material/Box';
@@ -43,9 +44,11 @@ export default function Home() {
               <Box sx={{ fontWeight: 300, fontSize: 20, paddingBottom: '2rem' }}>
                 Want to know how we can help you propel your business? Let&apos;s chat.
               </Box>
-              <Button variant='outlined'>
-                Let&apos;s Get In Touch <KeyboardDoubleArrowRightIcon />
-              </Button>
+              <Link href='/contact'>
+                <Button variant='outlined'>
+                  Let&apos;s Get In Touch <KeyboardDoubleArrowRightIcon />
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         </Container>

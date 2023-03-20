@@ -8,9 +8,11 @@ export default function ClientCareerDoubleBox() {
     <Grid container sx={{ backgroundColor: '#009688', color: 'white' }}>
       <Grid item xs={6} sx={{ padding: '3rem', textAlign: 'center' }}>
         <Box sx={{ fontSize: 32, paddingBottom: '2rem' }}>How can we help you?</Box>
-        <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>
-          Start Building With Us
-        </Button>
+        <Link href='/contact'>
+          <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>
+            Start Building With Us
+          </Button>
+        </Link>
       </Grid>
       <Grid item xs={6} sx={{ padding: '3rem', textAlign: 'center' }}>
         <Box sx={{ fontSize: 32, paddingBottom: '2rem' }}>Want to join us?</Box>
