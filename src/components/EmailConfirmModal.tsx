@@ -11,7 +11,8 @@ type EmailConfirmModalTypes = {
   setEmailConfirm: (_: boolean) => void;
 }
 
-export default function EmailConfirmModal({ emailConfirm, setEmailConfirm }: EmailConfirmModalTypes) {
+export default function EmailConfirmModal(
+  { emailConfirm, setEmailConfirm }: EmailConfirmModalTypes) {
   return (
     <div>
       <Dialog
