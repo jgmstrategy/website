@@ -68,10 +68,13 @@ export default function Careers() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography sx={{ paddingBottom: '1rem' }}>
-                Short job description goes here
+                We are looking for a highly motivated associate to join JGM Strategy. You will be
+                responsible for supporting the right teams and cases in delivering high-quality
+                consulting services to our clients. The ideal candidate will have a strong work
+                ethic, excellent communication skills, and a passion for learning.
               </Typography>
               <Stack spacing={2} direction='row'>
-                <Link href=''>
+                <Link href='/careers/associate'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
                 <Link href=''>
@@ -95,10 +98,13 @@ export default function Careers() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography sx={{ paddingBottom: '1rem' }}>
-                Short job description goes here
+                Ready to take the next step? You will be responsible for conducting research and
+                analysis to deliver high-quality reports and client presentations. You will also be
+                responsible for keeping important insights up to date when there is less casework
+                available.
               </Typography>
               <Stack spacing={2} direction='row'>
-                <Link href=''>
+                <Link href='/careers/business-analyst'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
                 <Link href=''>
@@ -122,10 +128,13 @@ export default function Careers() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography sx={{ paddingBottom: '1rem' }}>
-                Short job description goes here
+                You will work closely with our team to design, develop, and improve products either
+                internally at JGM Strategy or for projects and casework. You will have an
+                opportunity to work with frontier technology in autonomous robotics, logistics, and
+                planning software. You will be an essential part of our team and innovate rapidly.
               </Typography>
               <Stack spacing={2} direction='row'>
-                <Link href=''>
+                <Link href='/careers/swe'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
                 <Link href=''>
@@ -164,6 +173,33 @@ export default function Careers() {
               </Stack>
             </AccordionDetails>
           </Accordion>
+          <Accordion expanded={expanded === 'analyst_intern'} onChange={handleChange('analyst_intern')}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls='analyst_intern-content'
+              id='analyst_intern-header'
+            >
+              <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                Business Analyst Intern
+              </Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                Play an active role in client engagement
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography sx={{ paddingBottom: '1rem' }}>
+                Short job description goes here
+              </Typography>
+              <Stack spacing={2} direction='row'>
+                <Link href=''>
+                  <Button variant='contained'>Apply Now</Button>
+                </Link>
+                <Link href=''>
+                  <Button variant='text'>Refer a Friend</Button>
+                </Link>
+              </Stack>
+            </AccordionDetails>
+          </Accordion>
           <Accordion expanded={expanded === 'swe_intern'} onChange={handleChange('swe_intern')}>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -175,6 +211,33 @@ export default function Careers() {
               </Typography>
               <Typography sx={{ color: 'text.secondary' }}>
                 Build technology for important projects
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography sx={{ paddingBottom: '1rem' }}>
+                Short job description goes here
+              </Typography>
+              <Stack spacing={2} direction='row'>
+                <Link href=''>
+                  <Button variant='contained'>Apply Now</Button>
+                </Link>
+                <Link href=''>
+                  <Button variant='text'>Refer a Friend</Button>
+                </Link>
+              </Stack>
+            </AccordionDetails>
+          </Accordion>
+          <Accordion expanded={expanded === 'marketing_intern'} onChange={handleChange('marketing_intern')}>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls='marketing_intern-content'
+              id='marketing_intern-header'
+            >
+              <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                Marketing Intern
+              </Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                Leverage and impact the digital era
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
