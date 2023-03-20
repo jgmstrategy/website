@@ -12,12 +12,12 @@ export default function Terms() {
     <>
       <Head>
         <title>Terms and Conditions</title>
-        <meta name='description' content='' />
+        <meta name='description' content='The terms of use for interacting with the JGM Strategy consulting website' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
       <Container sx={{ paddingTop: '2rem', paddingBottom: '3rem' }}>
         <h1>Terms of Use</h1>
-        <p><i>Last updated March 09, 2023.</i></p>
+        <p><i>Last updated March 20, 2023.</i></p>
         <h2>Agreement to Our Legal Terms</h2>
         <p>
           We are JGM Strategy Consulting (&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot;
