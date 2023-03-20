@@ -5,7 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import ClientCareerDoubleBox from '@/components/ClientCareerDoubleBox';
+
+import ClientCareerDoubleBox from '../components/ClientCareerDoubleBox';
 
 export default function Sustainability() {
   return (
