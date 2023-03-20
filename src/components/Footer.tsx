@@ -29,7 +29,7 @@ export default function Footer({ setEmailConfirm }: FooterParams) {
       return;
     }
 
-    let formData = new FormData();
+    const formData = new FormData();
     formData.append(emailName, emailRef.current.value);
     emailRef.current.value = '';
     fetch(emailForm, {

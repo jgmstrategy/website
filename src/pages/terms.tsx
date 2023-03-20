@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Container from '@mui/material/Container';
 
 export default function Terms() {
   return (
@@ -8,6 +9,9 @@ export default function Terms() {
         <meta name='description' content='' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
+      <Container>
+        <h1>Terms of Use</h1>
+      </Container>
     </>
   );
 }
