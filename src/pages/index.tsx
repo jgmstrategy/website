@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import styles from '@/styles/Home.module.css';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -8,8 +9,7 @@ import Paper from '@mui/material/Paper';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
 import InsightCarousel from '../components/InsightCarousel';
-import Image from 'next/image';
-import Link from 'next/link';
+import ClientCareerDoubleBox from '@/components/ClientCareerDoubleBox';
 
 export default function Home() {
   return (
@@ -50,22 +50,7 @@ export default function Home() {
           </Grid>
         </Container>
       </main>
-      <Grid container sx={{ backgroundColor: '#009688', color: 'white' }}>
-        <Grid item xs={6} sx={{ padding: '3rem', textAlign: 'center' }}>
-          <Box sx={{ fontSize: 32, paddingBottom: '2rem' }}>How can we help you?</Box>
-          <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>
-            Start Building With Us
-          </Button>
-        </Grid>
-        <Grid item xs={6} sx={{ padding: '3rem', textAlign: 'center' }}>
-          <Box sx={{ fontSize: 32, paddingBottom: '2rem' }}>Want to join us?</Box>
-          <Link href='/careers'>
-            <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>
-              Jumpstart Your Career
-            </Button>
-          </Link>
-        </Grid>
-      </Grid>
+      <ClientCareerDoubleBox />
     </>
   );
 }
