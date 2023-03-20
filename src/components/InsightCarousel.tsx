@@ -2,23 +2,27 @@ import React from 'react';
 import Carousel from 'react-material-ui-carousel';
 import { Box } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function InsightCarousel() {
-  var items = [
+  const items = [
     {
       name: 'Better Patient Experiences',
       description: 'Learn how we help build better lives in the dentist office',
-      image: '/post_01.jpg'
+      image: '/post_01.jpg',
+      href: '/insights/better-patient-experiences'
     },
     {
       name: 'World Resource Report 2023',
       description: 'Navigate the constantly changing logistics landscape',
-      image: '/post_02.jpg'
+      image: '/post_02.jpg',
+      href: '/insights/world-resource-report'
     },
     {
       name: 'Diversity and Generative AI',
       description: 'Making sure marginalized groups do not get left behind',
-      image: '/post_03.jpg'
+      image: '/post_03.jpg',
+      href: '/insights/diversity-ai'
     }
   ];
 
@@ -39,38 +43,43 @@ type ItemProps = {
     name: string;
     description: string;
     image: string;
+    href: string;
   };
 };
 
 function Item(props: ItemProps) {
   return (
-    <Box
-      sx={{
-        width: 1,
-        height: 1,
-        minHeight: 600
-      }}
+    <Link
+      href={props.item.href}
     >
-      <Image
-        src={props.item.image}
-        alt=''
-        fill
-        style={{
-          objectFit: 'cover'
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          top: '20px',
-          left: '20px',
-          color: 'black',
-          backgroundColor: 'white'
+      <Box
+        sx={{
+          width: 1,
+          height: 1,
+          minHeight: 600
         }}
       >
-        <p>{props.item.name}</p>
-        <p>{props.item.description}</p>
-      </div>
-    </Box>
+        <Image
+          src={props.item.image}
+          alt=''
+          fill
+          style={{
+            objectFit: 'cover'
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: '20px',
+            left: '20px',
+            color: 'black',
+            backgroundColor: 'white'
+          }}
+        >
+          <p>{props.item.name}</p>
+          <p>{props.item.description}</p>
+        </div>
+      </Box>
+    </Link>
   );
 }
