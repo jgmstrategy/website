@@ -17,6 +17,14 @@
         "destructuring": "any",
         "ignoreReadBeforeAssign": false
       }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "ignoreComments": false,
+        "ignoreStrings": true
+      }
     ]
   }
 }

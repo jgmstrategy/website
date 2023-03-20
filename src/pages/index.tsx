@@ -35,9 +35,17 @@ export default function Home() {
               </Paper>
             </Grid>
             <Grid item xs={8}>
-              <Box sx={{ fontWeight: 500, fontSize: 48, paddingBottom: '1rem' }}>Make your next move with us</Box>
-              <Box sx={{ fontWeight: 300, fontSize: 20, paddingBottom: '2rem' }}>Want to know how we can help you propel your business? Let&apos;s chat.</Box>
-              <Button variant='outlined'>Let&apos;s Get In Touch <KeyboardDoubleArrowRightIcon /></Button>
+              <Box sx={{
+                fontWeight: 500, fontSize: 48, paddingBottom: '1rem'
+              }}>
+                Make your next move with us
+              </Box>
+              <Box sx={{ fontWeight: 300, fontSize: 20, paddingBottom: '2rem' }}>
+                Want to know how we can help you propel your business? Let&apos;s chat.
+              </Box>
+              <Button variant='outlined'>
+                Let&apos;s Get In Touch <KeyboardDoubleArrowRightIcon />
+              </Button>
             </Grid>
           </Grid>
         </Container>
@@ -45,12 +53,16 @@ export default function Home() {
       <Grid container sx={{ backgroundColor: '#009688', color: 'white' }}>
         <Grid item xs={6} sx={{ padding: '3rem', textAlign: 'center' }}>
           <Box sx={{ fontSize: 32, paddingBottom: '2rem' }}>How can we help you?</Box>
-          <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>Start Building With Us</Button>
+          <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>
+            Start Building With Us
+          </Button>
         </Grid>
         <Grid item xs={6} sx={{ padding: '3rem', textAlign: 'center' }}>
           <Box sx={{ fontSize: 32, paddingBottom: '2rem' }}>Want to join us?</Box>
           <Link href='/careers'>
-            <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>Jumpstart Your Career</Button>
+            <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>
+              Jumpstart Your Career
+            </Button>
           </Link>
         </Grid>
       </Grid>
