@@ -7,12 +7,8 @@ import {
 } from 'next/document';
 
 import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import EmailConfirmModal from '../components/EmailConfirmModal';
 
 export default function Document() {
-  const [emailConfirm, setEmailConfirm] = useState(false);
-
   return (
     <Html lang='en'>
       <Head>
@@ -31,13 +27,8 @@ export default function Document() {
         <meta name='theme-color' content='#ffffff' />
       </Head>
       <body>
-        <EmailConfirmModal
-          emailConfirm={emailConfirm}
-          setEmailConfirm={setEmailConfirm}
-        />
         <Navigation />
         <Main />
-        <Footer setEmailConfirm={setEmailConfirm} />
         <NextScript />
       </body>
 

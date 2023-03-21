@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
 import InsightCarousel from '../components/InsightCarousel';
-import ClientCareerDoubleBox from '@/components/ClientCareerDoubleBox';
+import ClientCareerDoubleBox from '../components/ClientCareerDoubleBox';
 
 export default function Home() {
   return (
