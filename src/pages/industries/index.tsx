@@ -7,78 +7,18 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import ClientCareerDoubleBox from '@/components/ClientCareerDoubleBox';
 
-type industriesType = {
-  name: string;
-  href: string;
-  desc: string;
-};
-
-const industries = [
-  {
-    name: 'Agriculture',
-    href: '/industries/agriculture',
-    desc: 'foo'
-  },
-  {
-    name: 'Construction',
-    href: '/industries/construction',
-    desc: 'foo'
-  },
-  {
-    name: 'Digital Media',
-    href: '/industries/media',
-    desc: 'foo'
-  },
-  {
-    name: 'Education',
-    href: '/industries/education',
-    desc: 'foo'
-  },
-  {
-    name: 'Entertainment',
-    href: '/industries/entertainment',
-    desc: 'foo'
-  },
-  {
-    name: 'Healthcare',
-    href: '/industries/healthcare',
-    desc: 'foo'
-  },
-  {
-    name: 'Lodging & Accommodation',
-    href: '/industries/lodging',
-    desc: 'foo'
-  },
-  {
-    name: 'Restaurants',
-    href: '/industries/restaurants',
-    desc: 'foo'
-  },
-  {
-    name: 'Retail',
-    href: '/industries/retail',
-    desc: 'foo'
-  },
-  {
-    name: 'Robotics',
-    href: '/industries/robotics',
-    desc: 'foo'
-  },
-  {
-    name: 'Transportation',
-    href: '/industries/transportation',
-    desc: 'foo'
-  },
-];
+import { industries, industriesType } from '../../constants/categories';
 
 function IndustryBox({ name, href, desc }: industriesType) {
   return (
-    <Link href={href}>
-      <Paper sx={{ padding: '1rem', margin: '1rem' }}>
-        <p>{name}</p>
-        <p>{desc}</p>
-      </Paper>
-    </Link>
+    <Grid item xs={4}>
+      <Link href={href}>
+        <Paper sx={{ padding: '1rem', margin: '1rem' }}>
+          <p>{name}</p>
+          <p>{desc}</p>
+        </Paper>
+      </Link>
+    </Grid>
   );
 }
 
