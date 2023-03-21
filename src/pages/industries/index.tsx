@@ -1,35 +1,12 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
+import CategoryBox from '../../components/CategoryBox';
 import ClientCareerDoubleBox from '../../components/ClientCareerDoubleBox';
-import { industries, categoryType } from '../../constants/categories';
-
-function IndustryBox({ name, href, desc }: categoryType) {
-  return (
-    <Grid item xs={4}>
-      <Link href={href}>
-        <Paper sx={{ padding: '1rem', margin: '1rem' }}>
-          <Typography
-            sx={{
-              fontWeight: 600,
-              paddingBottom: '1rem'
-            }}
-          >
-            {name}
-          </Typography>
-          <p>{desc}</p>
-        </Paper>
-      </Link>
-    </Grid>
-  );
-}
+import { industries } from '../../constants/categories';
 
 export default function Industries() {
   return (
@@ -58,7 +35,7 @@ export default function Industries() {
             }}
           >
             {
-              industries.map((industry) => IndustryBox(industry))
+              industries.map((industry) => CategoryBox(industry))
             }
           </Grid>
         </Box>

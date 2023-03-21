@@ -1,25 +1,11 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 
-import { services, categoryType } from '../../constants/categories';
-
-function ServicesBox({ name, href, desc }: categoryType) {
-  return (
-    <Grid item xs={4}>
-      <Link href={href}>
-        <Paper sx={{ padding: '1rem', margin: '1rem' }}>
-          <p>{name}</p>
-          <p>{desc}</p>
-        </Paper>
-      </Link>
-    </Grid>
-  );
-}
+import CategoryBox from '../../components/CategoryBox';
+import { services } from '../../constants/categories';
 
 export default function Services() {
   return (
@@ -49,7 +35,7 @@ export default function Services() {
             }}
           >
             {
-              services.map((industry) => ServicesBox(industry))
+              services.map((industry) => CategoryBox(industry))
             }
           </Grid>
         </Box>
