@@ -10,14 +10,27 @@ import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ShareDialog from '@/components/ShareDialog';
 
 export default function Careers() {
   const [expanded, setExpanded] = useState<string | false>(false);
+  const [open, setOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState('');
 
   const handleChange =
     (panel: string) => (event: SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? panel : false);
     };
+
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (value: string) => {
+    setOpen(false);
+    setSelectedValue(value);
+  };
 
   return (
     <>
@@ -26,6 +39,11 @@ export default function Careers() {
         <meta name='description' content='Come work with us on building the next generation' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
+      <ShareDialog
+        selectedValue={selectedValue}
+        open={open}
+        onClose={handleClose}
+      />
       <div className='bg-image' style={{ height: '25rem', overflow: 'hidden' }}>
         <Image
           src='/discs.jpg'
@@ -77,9 +95,7 @@ export default function Careers() {
                 <Link href='/careers/associate'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
-                <Link href=''>
-                  <Button variant='text'>Refer a Friend</Button>
-                </Link>
+                <Button variant='text' onClick={handleClickOpen}>Refer a Friend</Button>
               </Stack>
             </AccordionDetails>
           </Accordion>
