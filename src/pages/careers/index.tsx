@@ -123,9 +123,7 @@ export default function Careers() {
                 <Link href='/careers/business-analyst'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
-                <Link href=''>
-                  <Button variant='text'>Refer a Friend</Button>
-                </Link>
+                <Button variant='text' onClick={handleClickOpen}>Refer a Friend</Button>
               </Stack>
             </AccordionDetails>
           </Accordion>
@@ -153,9 +151,7 @@ export default function Careers() {
                 <Link href='/careers/swe'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
-                <Link href=''>
-                  <Button variant='text'>Refer a Friend</Button>
-                </Link>
+                <Button variant='text' onClick={handleClickOpen}>Refer a Friend</Button>
               </Stack>
             </AccordionDetails>
           </Accordion>
@@ -185,9 +181,7 @@ export default function Careers() {
                 <Link href='/careers/associate-intern'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
-                <Link href=''>
-                  <Button variant='text'>Refer a Friend</Button>
-                </Link>
+                <Button variant='text' onClick={handleClickOpen}>Refer a Friend</Button>
               </Stack>
             </AccordionDetails>
           </Accordion>
@@ -214,9 +208,7 @@ export default function Careers() {
                 <Link href='/careers/business-analyst-intern'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
-                <Link href=''>
-                  <Button variant='text'>Refer a Friend</Button>
-                </Link>
+                <Button variant='text' onClick={handleClickOpen}>Refer a Friend</Button>
               </Stack>
             </AccordionDetails>
           </Accordion>
@@ -243,9 +235,7 @@ export default function Careers() {
                 <Link href='/careers/swe-intern'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
-                <Link href=''>
-                  <Button variant='text'>Refer a Friend</Button>
-                </Link>
+                <Button variant='text' onClick={handleClickOpen}>Refer a Friend</Button>
               </Stack>
             </AccordionDetails>
           </Accordion>
@@ -272,9 +262,7 @@ export default function Careers() {
                 <Link href='/careers/marketing-intern'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
-                <Link href=''>
-                  <Button variant='text'>Refer a Friend</Button>
-                </Link>
+                <Button variant='text' onClick={handleClickOpen}>Refer a Friend</Button>
               </Stack>
             </AccordionDetails>
           </Accordion>
