@@ -1,10 +1,25 @@
+import { useState } from 'react';
 import Head from 'next/head';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import FormControl from '@mui/material/FormControl';
 import Grid from '@mui/material/Grid';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Stack from '@mui/material/Stack';
+import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function Contact() {
+  const [age, setAge] = useState('');
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value);
+  };
+
   return (
     <>
       <Head>
@@ -83,7 +98,53 @@ export default function Contact() {
           padding: '3rem'
         }}
       >
-        <p>We hope to display a contact form here soon</p>
+        <p>We hope to have this form formatted soon.</p>
+        <Box component='form'>
+          <Stack spacing={2}>
+            <Stack spacing={2} direction='row'>
+              <TextField
+                required
+                id='name'
+                label='Name'
+                variant='standard'
+              />
+              <TextField
+                required
+                id='name'
+                label='Email'
+                variant='standard'
+                type='email'
+              />
+            </Stack>
+            <FormControl variant='standard' sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel id='contact-reason-label'>Reason for Contact</InputLabel>
+              <Select
+                labelId='contact-reason-label'
+                id='contact-reason'
+                value={age}
+                onChange={handleChange}
+                label='Reason for Contact'
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+            <TextField
+              required
+              multiline
+              rows={6}
+              id='name'
+              label='Message'
+            />
+            <p>Captcha is currently not required for form submission, but will be enabled soon</p>
+            <HCaptcha
+              sitekey='10000000-ffff-ffff-ffff-000000000001'
+              onVerify={(token, ekey) => { return; }}
+            />
+            <Button variant='contained'>Submit</Button>
+          </Stack>
+        </Box>
       </Container>
     </>
   );
