@@ -1,8 +1,10 @@
-import React from 'react';
-import Carousel from 'react-material-ui-carousel';
-import { Box } from '@mui/material';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
+import Carousel from 'react-material-ui-carousel';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 export default function InsightCarousel() {
   const items = [
@@ -70,14 +72,23 @@ function Item(props: ItemProps) {
         <div
           style={{
             position: 'absolute',
-            top: '20px',
-            left: '20px',
             color: 'black',
-            backgroundColor: 'white'
+            justifyContent: 'center',
+            bottom: 0,
+            left: 0
           }}
+          className='mb-4 mx-4'
         >
-          <p>{props.item.name}</p>
-          <p>{props.item.description}</p>
+          <Card sx={{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }}>
+            <CardContent>
+              <Typography variant='h4' component='div'>
+                {props.item.name}
+              </Typography>
+              <Typography variant='body2'>
+                {props.item.description}
+              </Typography>
+            </CardContent>
+          </Card>
         </div>
       </Box>
     </Link>
