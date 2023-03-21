@@ -14,10 +14,10 @@ import Typography from '@mui/material/Typography';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function Contact() {
-  const [age, setAge] = useState('');
+  const [reason, setReason] = useState('');
 
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+    setReason(event.target.value);
   };
 
   return (
@@ -116,18 +116,23 @@ export default function Contact() {
                 type='email'
               />
             </Stack>
-            <FormControl variant='standard' sx={{ m: 1, minWidth: 120 }}>
+            <FormControl required variant='standard' sx={{ m: 1, minWidth: 120 }}>
               <InputLabel id='contact-reason-label'>Reason for Contact</InputLabel>
               <Select
                 labelId='contact-reason-label'
                 id='contact-reason'
-                value={age}
+                value={reason}
                 onChange={handleChange}
                 label='Reason for Contact'
               >
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value='new_business'>New business inquiry</MenuItem>
+                <MenuItem value='partner'>Partner with us</MenuItem>
+                <MenuItem value='press'>Press relations</MenuItem>
+                <MenuItem value='speaker'>Speaker relations</MenuItem>
+                <MenuItem value='employee'>Employee relations</MenuItem>
+                <MenuItem value='alumni'>Alumni relations</MenuItem>
+                <MenuItem value='hr'>Hiring and career information</MenuItem>
+                <MenuItem value='support'>Technical support or incident</MenuItem>
               </Select>
             </FormControl>
             <TextField
