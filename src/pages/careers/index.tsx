@@ -161,10 +161,12 @@ export default function Careers() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography sx={{ paddingBottom: '1rem' }}>
-                Short job description goes here
+                Come see what it is like to work with us as a partner at JGM Strategy Consulting!
+                You will get hands-on experience with casework during your temporary stint with us,
+                and we will be happy to provide you with letters of reference.
               </Typography>
               <Stack spacing={2} direction='row'>
-                <Link href=''>
+                <Link href='/careers/associate-intern'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
                 <Link href=''>
@@ -188,10 +190,12 @@ export default function Careers() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography sx={{ paddingBottom: '1rem' }}>
-                Short job description goes here
+                Business majors wanting to see what your classes look like in the real world? We
+                will provide real casework for you to get your hands dirty with, and it will be fun
+                at the same time!
               </Typography>
               <Stack spacing={2} direction='row'>
-                <Link href=''>
+                <Link href='/careers/business-analyst-intern'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
                 <Link href=''>
@@ -215,10 +219,12 @@ export default function Careers() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography sx={{ paddingBottom: '1rem' }}>
-                Short job description goes here
+                Come work with our world-class engineering team on developing everything from full
+                stack websites to logistics, AI, and autonomous vehicle software. We are also able
+                to accommodate your strengths!
               </Typography>
               <Stack spacing={2} direction='row'>
-                <Link href=''>
+                <Link href='/careers/swe-intern'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
                 <Link href=''>
@@ -242,10 +248,12 @@ export default function Careers() {
             </AccordionSummary>
             <AccordionDetails>
               <Typography sx={{ paddingBottom: '1rem' }}>
-                Short job description goes here
+                Come make a difference on a global team of motivated, creative, and amazing people.
+                You will have the opportunity to shine and share your knowledge, energy, and
+                passion on real impact.
               </Typography>
               <Stack spacing={2} direction='row'>
-                <Link href=''>
+                <Link href='/careers/marketing-intern'>
                   <Button variant='contained'>Apply Now</Button>
                 </Link>
                 <Link href=''>
