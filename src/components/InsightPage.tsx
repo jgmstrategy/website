@@ -55,9 +55,9 @@ export default function InsightPage(props: PropsWithChildren<InsightPageProps>) 
         </div>
       </div>
       <Container maxWidth='md' sx={{ paddingTop: '6rem', paddingBottom: '2rem' }}>
-        <p>Authors list</p>
-        <p>Date of publication</p>
-        <p>Share button coming soon</p>
+        <p>Currently the list of authors is unavailable, but we hope to display that soon</p>
+        <p>Currently the date of publication is unavailable, but we hope to display that soon</p>
+        <p>We hope to have share buttons for you soon</p>
         {props.children}
       </Container>
     </>
