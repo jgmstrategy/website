@@ -1,12 +1,9 @@
-import { useState } from 'react';
 import {
   Html,
   Head,
   Main,
   NextScript
 } from 'next/document';
-
-import Navigation from '../components/Navigation';
 
 export default function Document() {
   return (
@@ -27,7 +24,6 @@ export default function Document() {
         <meta name='theme-color' content='#ffffff' />
       </Head>
       <body>
-        <Navigation />
         <Main />
         <NextScript />
       </body>
