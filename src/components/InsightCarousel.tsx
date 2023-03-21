@@ -11,19 +11,19 @@ export default function InsightCarousel() {
     {
       name: 'Better Patient Experiences',
       description: 'Learn how we help build better lives in the dentist office',
-      image: '/post_01.jpg',
+      image: '/insights/better-patient-experiences.jpg',
       href: '/insights/better-patient-experiences'
     },
     {
       name: 'World Resource Report 2023',
       description: 'Navigate the constantly changing logistics landscape',
-      image: '/post_02.jpg',
+      image: '/insights/world-resource-report.jpg',
       href: '/insights/world-resource-report'
     },
     {
       name: 'Diversity and Generative AI',
       description: 'Making sure marginalized groups do not get left behind',
-      image: '/post_03.jpg',
+      image: '/insights/diversity-ai.jpg',
       href: '/insights/diversity-ai'
     }
   ];

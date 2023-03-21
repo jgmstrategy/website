@@ -1,3 +1,14 @@
+import InsightPage from '../../components/InsightPage';
+
 export default function DiversityAI() {
-  return <h1>First Post</h1>;
+  return (
+    <InsightPage
+      title='Diversity and Generative AI'
+      image='/insights/diversity-ai.jpg'
+      description='Steps are being taken to recognize marginalized groups, but is it enough?'
+      subheader='Technology Insight'
+    >
+      <p>Content</p>
+    </InsightPage>
+  );
 }
