@@ -9,7 +9,7 @@ export default function ClientCareerDoubleBox() {
       <Grid item xs={6} sx={{ padding: '3rem', textAlign: 'center' }}>
         <Box sx={{ fontSize: 32, paddingBottom: '2rem' }}>How can we help you?</Box>
         <Link href='/contact'>
-          <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>
+          <Button variant='contained' sx={{ backgroundColor: '#212121' }}>
             Start Building With Us
           </Button>
         </Link>
@@ -17,7 +17,7 @@ export default function ClientCareerDoubleBox() {
       <Grid item xs={6} sx={{ padding: '3rem', textAlign: 'center' }}>
         <Box sx={{ fontSize: 32, paddingBottom: '2rem' }}>Want to join us?</Box>
         <Link href='/careers'>
-          <Button variant='contained' sx={{ backgroundColor: '#ffc400' }}>
+          <Button variant='contained' sx={{ backgroundColor: '#212121' }}>
             Jumpstart Your Career
           </Button>
         </Link>
