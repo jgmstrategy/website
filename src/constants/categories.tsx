@@ -1,4 +1,4 @@
-export type industriesType = {
+export type categoryType = {
   name: string;
   href: string;
   desc: string;
@@ -58,6 +58,29 @@ export const industries = [
   {
     name: 'Transportation',
     href: '/industries/transportation',
+    desc: 'foo'
+  },
+];
+
+export const services = [
+  {
+    name: 'Digital Media',
+    href: '/services/digital',
+    desc: 'foo'
+  },
+  {
+    name: 'Logistics',
+    href: '/services/logistics',
+    desc: 'foo'
+  },
+  {
+    name: 'Modernization',
+    href: '/services/modernization',
+    desc: 'foo'
+  },
+  {
+    name: 'Operations',
+    href: '/services/operations',
     desc: 'foo'
   },
 ];

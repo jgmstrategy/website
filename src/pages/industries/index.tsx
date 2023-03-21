@@ -5,16 +5,25 @@ import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import ClientCareerDoubleBox from '@/components/ClientCareerDoubleBox';
+import Typography from '@mui/material/Typography';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-import { industries, industriesType } from '../../constants/categories';
+import ClientCareerDoubleBox from '../../components/ClientCareerDoubleBox';
+import { industries, categoryType } from '../../constants/categories';
 
-function IndustryBox({ name, href, desc }: industriesType) {
+function IndustryBox({ name, href, desc }: categoryType) {
   return (
     <Grid item xs={4}>
       <Link href={href}>
         <Paper sx={{ padding: '1rem', margin: '1rem' }}>
-          <p>{name}</p>
+          <Typography
+            sx={{
+              fontWeight: 600,
+              paddingBottom: '1rem'
+            }}
+          >
+            {name}
+          </Typography>
           <p>{desc}</p>
         </Paper>
       </Link>

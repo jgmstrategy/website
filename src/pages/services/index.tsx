@@ -6,43 +6,18 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
-type servicesType = {
-  name: string;
-  href: string;
-  desc: string;
-};
+import { services, categoryType } from '../../constants/categories';
 
-const services = [
-  {
-    name: 'Digital Media',
-    href: '/services/digital',
-    desc: 'foo'
-  },
-  {
-    name: 'Logistics',
-    href: '/services/logistics',
-    desc: 'foo'
-  },
-  {
-    name: 'Modernization',
-    href: '/services/modernization',
-    desc: 'foo'
-  },
-  {
-    name: 'Operations',
-    href: '/services/operations',
-    desc: 'foo'
-  },
-];
-
-function ServicesBox({ name, href, desc }: servicesType) {
+function ServicesBox({ name, href, desc }: categoryType) {
   return (
-    <Link href={href}>
-      <Paper sx={{ padding: '1rem', margin: '1rem' }}>
-        <p>{name}</p>
-        <p>{desc}</p>
-      </Paper>
-    </Link>
+    <Grid item xs={4}>
+      <Link href={href}>
+        <Paper sx={{ padding: '1rem', margin: '1rem' }}>
+          <p>{name}</p>
+          <p>{desc}</p>
+        </Paper>
+      </Link>
+    </Grid>
   );
 }
 
