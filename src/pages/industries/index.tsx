@@ -20,8 +20,18 @@ const industries = [
     desc: 'foo'
   },
   {
+    name: 'Construction',
+    href: '/industries/construction',
+    desc: 'foo'
+  },
+  {
     name: 'Digital Media',
     href: '/industries/media',
+    desc: 'foo'
+  },
+  {
+    name: 'Education',
+    href: '/industries/education',
     desc: 'foo'
   },
   {
@@ -47,6 +57,11 @@ const industries = [
   {
     name: 'Retail',
     href: '/industries/retail',
+    desc: 'foo'
+  },
+  {
+    name: 'Robotics',
+    href: '/industries/robotics',
     desc: 'foo'
   },
   {
