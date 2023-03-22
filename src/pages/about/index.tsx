@@ -75,12 +75,18 @@ export default function About() {
       <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
         <Box justifyContent='center' className='d-flex'>
           <Stack alignItems='center'>
-            <Typography>Our Leadership</Typography>
+            <Typography>
+              This page is currently under construction
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: 42,
+                fontWeight: 800,
+                marginBottom: '1rem'
+              }}
+            >Our Leadership</Typography>
             <Typography>
               JGM Strategy Consulting is run by leaders with world-class experience.
-            </Typography>
-            <Typography>
-              Profile images are currently temporary while this page is under construction.
             </Typography>
           </Stack>
         </Box>
@@ -104,12 +110,53 @@ export default function About() {
             ))
           }
         </Grid>
-        <h3>We are a global consultancy text placeholder</h3>
-        <h3>Cool numbers</h3>
-        <p>Cool image or video placeholder</p>
-        <h3>What we specialize/our expertise in placeholder</h3>
-        <p>Links to things in our industries</p>
-        <h3>Our purpose placeholder</h3>
+        <Container maxWidth='sm' sx={{ paddingY: '2rem' }}>
+          <Typography
+            sx={{
+              fontSize: '22px',
+              textAlign: 'center',
+            }}
+          >
+            We are a global consultancy firm and we bring the energy and acceleration
+            to every client relationship. Our leaders achieve results that build
+            out capabilities and focus on opportunities.
+          </Typography>
+        </Container>
+      </Container>
+      <div className='bg-image' style={{ height: '50rem', overflow: 'hidden' }}>
+        <Image
+          src='/water.jpg'
+          alt=''
+          style={{ objectFit: 'cover' }}
+          fill
+        />
+        <div className='mask'>
+          <div className='d-flex align-items-center h-100 p-4'>
+            <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
+              <CardContent sx={{ color: 'white' }}>
+                <Typography
+                  variant='h5'
+                  component='div'
+                  className='pb-3'
+                  sx={{
+                    fontSize: 48
+                  }}
+                >
+                  By the Numbers
+                </Typography>
+                <Typography variant='body1'>
+                  Hear it from the experts. We&apos;re seeing the big picture here.
+                </Typography>
+              </CardContent>
+            </Paper>
+          </div>
+        </div>
+      </div>
+      <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
+        <Typography>Cool image or video placeholder</Typography>
+        <Typography>What we specialize/our expertise in placeholder</Typography>
+        <Typography>Links to things in our industries</Typography>
+        <Typography>Our purpose placeholder</Typography>
       </Container>
       <ClientCareerDoubleBox />
     </>
