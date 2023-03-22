@@ -4,17 +4,21 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import ClientCareerDoubleBox from '@/components/ClientCareerDoubleBox';
 
+const imageWidth = 400;
+const imageHeight = 200;
+
 export default function About() {
   return (
     <>
       <Head>
-        <title>About us</title>
+        <title>About JGM Strategy Consulting</title>
         <meta name='description' content='Learn about the key members at JGM Strategy' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
@@ -52,30 +56,39 @@ export default function About() {
       <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
         <Box justifyContent='center' className='d-flex'>
           <Stack alignItems='center'>
-            <Typography>Our Leadership</Typography>
+            <Divider sx={{ margin: '1rem' }}>Our Leadership</Divider>
             <Typography>
               JGM Strategy Consulting is run by leaders with world-class experience.
             </Typography>
             <Typography>
-              TODO: Make this page look nice
+              Profile images are currently temporary while this page is under construction.
             </Typography>
           </Stack>
         </Box>
-        <Grid container justifyContent='center' spacing={2}>
+        <Grid
+          container
+          justifyContent='center'
+          spacing={2}
+          sx={{
+            marginY: '1rem'
+          }}
+        >
           <Grid item>
-            <Paper>
-              <p>Jason</p>
-            </Paper>
+            <Image src='/about/jason.jpg' width={imageWidth} height={imageHeight} alt='' />
+            <Typography>Founding Partner</Typography>
+            <Typography>Jason Estabillo</Typography>
+          </Grid>
+          <Divider orientation='vertical' flexItem />
+          <Grid item>
+            <Image src='/about/gideon.jpg' width={imageWidth} height={imageHeight} alt='' />
+            <Typography>Founding Partner</Typography>
+            <Typography>Gideon Tong</Typography>
           </Grid>
           <Grid item>
-            <Paper>
-              <p>Gid</p>
-            </Paper>
-          </Grid>
-          <Grid item>
-            <Paper>
-              <p>Max</p>
-            </Paper>
+
+            <Image src='/about/maxwell.jpg' width={imageWidth} height={imageHeight} alt='' />
+            <Typography>Founding Partner</Typography>
+            <Typography>Maxwell Chang</Typography>
           </Grid>
         </Grid>
         <h3>We are a global consultancy text placeholder</h3>
