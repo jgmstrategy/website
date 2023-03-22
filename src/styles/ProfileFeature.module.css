@@ -1,0 +1,8 @@
+.person {
+  border: 1px solid black;
+}
+
+.person:hover {
+  transform: scale(1.02) perspective(0px);
+  box-shadow: 0 10px 4px rgba(0, 0, 0, 0.7);
+}

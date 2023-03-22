@@ -4,16 +4,13 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 import ClientCareerDoubleBox from '../components/ClientCareerDoubleBox';
-
-const imageWidth = 270;
-const imageHeight = 135;
+import ProfileFeature from '../components/ProfileFeature';
 
 const profiles = [
   {
@@ -32,22 +29,6 @@ const profiles = [
     image: '/about/maxwell.jpg'
   }
 ];
-
-type ProfileFeatureProps = {
-  name: string;
-  role: string;
-  image: string;
-};
-
-function ProfileFeature({ name, role, image }: ProfileFeatureProps) {
-  return (
-    <Stack>
-      <Image src={image} width={imageWidth} height={imageHeight} alt='' />
-      <Typography>{role}</Typography>
-      <Typography>{name}</Typography>
-    </Stack>
-  );
-}
 
 export default function About() {
   return (
@@ -105,20 +86,17 @@ export default function About() {
           justifyContent='center'
           spacing={2}
           sx={{
-            marginY: '1rem',
-            border: '1px solid',
-            borderRadius: 1
+            marginY: '1rem'
           }}
         >
           {
             profiles.map(({ name, role, image }) => (
-              <Grid key={name} item>
-                <ProfileFeature
-                  name={name}
-                  role={role}
-                  image={image}
-                />
-              </Grid>
+              <ProfileFeature
+                key={name}
+                name={name}
+                role={role}
+                image={image}
+              />
             ))
           }
         </Grid>
