@@ -75,9 +75,6 @@ export default function About() {
       <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
         <Box justifyContent='center' className='d-flex'>
           <Stack alignItems='center'>
-            <Typography>
-              This page is currently under construction
-            </Typography>
             <Typography
               sx={{
                 fontSize: 42,
