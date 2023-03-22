@@ -28,14 +28,14 @@ export default function Home() {
         <InsightCarousel />
       </Box>
       <main className={styles.main}>
-        <Container>
+        <Container sx={{ padding: '6rem' }}>
           <Grid container spacing={6}>
-            <Grid item xs={4}>
+            <Grid item md={4}>
               <Paper elevation={6} sx={{ position: 'relative', overflow: 'hidden', height: 300 }}>
                 <Image src='/engine.jpg' alt='' fill style={{ objectFit: 'cover' }} />
               </Paper>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item md={8}>
               <Box sx={{
                 fontWeight: 500, fontSize: 48, paddingBottom: '1rem'
               }}>
