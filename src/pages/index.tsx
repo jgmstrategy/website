@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '@/styles/Home.module.css';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -9,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
+import styles from '../styles/Home.module.css';
 import InsightCarousel from '../components/InsightCarousel';
 import ClientCareerDoubleBox from '../components/ClientCareerDoubleBox';
 

@@ -9,24 +9,27 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-import ClientCareerDoubleBox from '../components/ClientCareerDoubleBox';
-import ProfileFeature from '../components/ProfileFeature';
+import ClientCareerDoubleBox from '../../components/ClientCareerDoubleBox';
+import ProfileFeature from '../../components/ProfileFeature';
 
 const profiles = [
   {
     name: 'Jason Estabillo',
     role: 'Founding Partner',
-    image: '/about/jason.jpg'
+    image: '/about/jason.jpg',
+    href: '/about/jason-estabillo'
   },
   {
     name: 'Gideon Tong',
     role: 'Founding Partner',
-    image: '/about/gideon.jpg'
+    image: '/about/gideon.jpg',
+    href: '/about/gideon-tong'
   },
   {
     name: 'Maxwell Chang',
     role: 'Founding Partner',
-    image: '/about/maxwell.jpg'
+    image: '/about/maxwell.jpg',
+    href: '/about/maxwell-chang'
   }
 ];
 
@@ -86,16 +89,17 @@ export default function About() {
           justifyContent='center'
           spacing={2}
           sx={{
-            marginY: '1rem'
+            marginY: '2rem'
           }}
         >
           {
-            profiles.map(({ name, role, image }) => (
+            profiles.map(({ name, role, image, href }) => (
               <ProfileFeature
                 key={name}
                 name={name}
                 role={role}
                 image={image}
+                href={href}
               />
             ))
           }
