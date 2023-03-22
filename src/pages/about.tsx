@@ -9,10 +9,45 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import ClientCareerDoubleBox from '@/components/ClientCareerDoubleBox';
 
-const imageWidth = 400;
-const imageHeight = 200;
+import ClientCareerDoubleBox from '../components/ClientCareerDoubleBox';
+
+const imageWidth = 270;
+const imageHeight = 135;
+
+const profiles = [
+  {
+    name: 'Jason Estabillo',
+    role: 'Founding Partner',
+    image: '/about/jason.jpg'
+  },
+  {
+    name: 'Gideon Tong',
+    role: 'Founding Partner',
+    image: '/about/gideon.jpg'
+  },
+  {
+    name: 'Maxwell Chang',
+    role: 'Founding Partner',
+    image: '/about/maxwell.jpg'
+  }
+];
+
+type ProfileFeatureProps = {
+  name: string;
+  role: string;
+  image: string;
+};
+
+function ProfileFeature({ name, role, image }: ProfileFeatureProps) {
+  return (
+    <Stack>
+      <Image src={image} width={imageWidth} height={imageHeight} alt='' />
+      <Typography>{role}</Typography>
+      <Typography>{name}</Typography>
+    </Stack>
+  );
+}
 
 export default function About() {
   return (
@@ -56,7 +91,7 @@ export default function About() {
       <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
         <Box justifyContent='center' className='d-flex'>
           <Stack alignItems='center'>
-            <Divider sx={{ margin: '1rem' }}>Our Leadership</Divider>
+            <Typography>Our Leadership</Typography>
             <Typography>
               JGM Strategy Consulting is run by leaders with world-class experience.
             </Typography>
@@ -70,26 +105,22 @@ export default function About() {
           justifyContent='center'
           spacing={2}
           sx={{
-            marginY: '1rem'
+            marginY: '1rem',
+            border: '1px solid',
+            borderRadius: 1
           }}
         >
-          <Grid item>
-            <Image src='/about/jason.jpg' width={imageWidth} height={imageHeight} alt='' />
-            <Typography>Founding Partner</Typography>
-            <Typography>Jason Estabillo</Typography>
-          </Grid>
-          <Divider orientation='vertical' flexItem />
-          <Grid item>
-            <Image src='/about/gideon.jpg' width={imageWidth} height={imageHeight} alt='' />
-            <Typography>Founding Partner</Typography>
-            <Typography>Gideon Tong</Typography>
-          </Grid>
-          <Grid item>
-
-            <Image src='/about/maxwell.jpg' width={imageWidth} height={imageHeight} alt='' />
-            <Typography>Founding Partner</Typography>
-            <Typography>Maxwell Chang</Typography>
-          </Grid>
+          {
+            profiles.map(({ name, role, image }) => (
+              <Grid key={name} item>
+                <ProfileFeature
+                  name={name}
+                  role={role}
+                  image={image}
+                />
+              </Grid>
+            ))
+          }
         </Grid>
         <h3>We are a global consultancy text placeholder</h3>
         <h3>Cool numbers</h3>
