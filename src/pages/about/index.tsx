@@ -120,15 +120,15 @@ export default function About() {
           </Typography>
         </Container>
       </Container>
-      <div className='bg-image' style={{ height: '50rem', overflow: 'hidden' }}>
+      <div className='bg-image' style={{ height: '35rem', overflow: 'hidden' }}>
         <Image
-          src='/water.jpg'
+          src='/about/plantation.jpg'
           alt=''
           style={{ objectFit: 'cover' }}
           fill
         />
         <div className='mask'>
-          <div className='d-flex align-items-center h-100 p-4'>
+          <div className='d-flex align-items-center justify-content-end h-100 p-4'>
             <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
               <CardContent sx={{ color: 'white' }}>
                 <Typography
@@ -136,12 +136,13 @@ export default function About() {
                   component='div'
                   className='pb-3'
                   sx={{
-                    fontSize: 48
+                    fontSize: 48,
+                    textAlign: 'right'
                   }}
                 >
                   By the Numbers
                 </Typography>
-                <Typography variant='body1'>
+                <Typography variant='body1' sx={{ textAlign: 'right' }}>
                   Hear it from the experts. We&apos;re seeing the big picture here.
                 </Typography>
               </CardContent>
