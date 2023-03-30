@@ -11,7 +11,7 @@ export default function CategoryBox({ name, href, desc }: categoryType) {
   return (
     <Grid item xs={4}>
       <Link href={href}>
-        <Paper sx={{ padding: '1rem', margin: '1rem' }}>
+        <Paper sx={{ padding: '1rem', margin: '1rem' }} elevation={5}>
           <Stack direction='row' justifyContent='space-between'>
             <Typography
               sx={{

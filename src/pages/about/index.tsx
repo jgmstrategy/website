@@ -136,7 +136,7 @@ export default function About() {
                   component='div'
                   className='pb-3'
                   sx={{
-                    fontSize: 48,
+                    fontSize: 60,
                     textAlign: 'right'
                   }}
                 >
@@ -150,11 +150,48 @@ export default function About() {
           </div>
         </div>
       </div>
-      <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
-        <Typography>Cool image or video placeholder</Typography>
-        <Typography>What we specialize/our expertise in placeholder</Typography>
-        <Typography>Links to things in our industries</Typography>
-        <Typography>Our purpose placeholder</Typography>
+      <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
+        <Typography>
+          We service 8 countries in 13 major industries. Whatever you are looking for, we probably
+          have something for you. Let&apos;s get in touch.
+        </Typography>
+      </Container>
+      <div className='bg-image' style={{ height: '35rem', overflow: 'hidden' }}>
+        <Image
+          src='/about/cups.jpg'
+          alt=''
+          style={{ objectFit: 'cover' }}
+          fill
+        />
+        <div className='mask'>
+          <div className='d-flex align-items-center h-100 p-4'>
+            <Paper elevation={0} sx={{ backgroundColor: 'transparent' }}>
+              <CardContent sx={{ color: 'white' }}>
+                <Typography
+                  variant='h5'
+                  component='div'
+                  className='pb-3'
+                  sx={{
+                    fontSize: 60,
+                    textAlign: 'left'
+                  }}
+                >
+                  Our Purpose
+                </Typography>
+                <Typography variant='body1' sx={{ textAlign: 'left' }}>
+                  We&apos;re here to unlock your potential. Let&apos;s get started.
+                </Typography>
+              </CardContent>
+            </Paper>
+          </div>
+        </div>
+      </div>
+      <Container maxWidth='md' sx={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
+        <Typography>
+          JGM Strategy Consulting exists to help you get off the ground and soar in the skies to
+          the fullest of your potential. We grow with you and enable you to build your business,
+          reach unrealized advantages, and see where your competition knack is.
+        </Typography>
       </Container>
       <ClientCareerDoubleBox />
     </>

@@ -1,10 +1,45 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+
+import { insights, insightType } from '@/constants/insights';
+
+function InsightFeatureBox({ name, href, desc, image }: insightType) {
+  return (
+    <Grid item xs={4}>
+      <Link href={href}>
+        <Paper sx={{ padding: '1rem', margin: '1rem' }} elevation={1}>
+          <Stack direction='row' justifyContent='space-between'>
+            <Typography
+              sx={{
+                fontSize: 18,
+                fontWeight: 600,
+                paddingBottom: '1rem'
+              }}
+            >
+              {name}
+            </Typography>
+          </Stack>
+          <Typography
+            sx={{
+              fontSize: 14
+            }}
+          >
+            {desc}
+          </Typography>
+        </Paper>
+      </Link>
+    </Grid>
+  );
+}
 
 export default function Insights() {
   return (
@@ -45,11 +80,27 @@ export default function Insights() {
           </div>
         </div>
       </div>
-      <Container>
-        <p>We hope to display recommended insights soon</p>
-        <p>We hope to feature a global or annual overview here soon</p>
-        <p>We hope to display a carousel of new insights here soon</p>
-        <p>We hope to display a grid of the recent insights here soon</p>
+      <Container maxWidth='lg' sx={{ paddingTop: '3rem' }}>
+        <Typography>
+          We hope to display recommended and featured insights here soon. For now, you can browse
+          a list of all the insights below.
+        </Typography>
+      </Container>
+      <Container maxWidth='lg' sx={{ paddingTop: '3rem', paddingBottom: '3rem' }}>
+        <Box sx={{ flexGrow: 1, marginBottom: '2rem' }}>
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+            sx={{
+              paddingTop: '2rem'
+            }}
+          >
+            {
+              insights.map((insight) => InsightFeatureBox(insight))
+            }
+          </Grid>
+        </Box>
       </Container>
     </>
   );
