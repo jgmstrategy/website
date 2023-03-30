@@ -18,6 +18,16 @@ function InsightFeatureBox({ name, href, desc, image }: insightType) {
       <Link href={href}>
         <Paper sx={{ padding: '1rem', margin: '1rem' }} elevation={1}>
           <Stack direction='row' justifyContent='space-between'>
+            <Box
+              width={1}
+              sx={{
+                height: 100,
+                position: 'relative',
+                marginY: '1rem'
+              }}
+            >
+              <Image src={image} alt='' fill />
+            </Box>
             <Typography
               sx={{
                 fontSize: 18,
