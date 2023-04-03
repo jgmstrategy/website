@@ -11,5 +11,17 @@ export const insights = [
     href: '/insights/better-patient-experiences',
     desc: 'Learn how JGM Strategy is able to keep stress levels low in the waiting room.',
     image: '/insights/better-patient-experiences.jpg'
+  },
+  {
+    name: 'World Resource Report 2023',
+    href: '/insights/world-resource-report',
+    desc: 'Find your way in the world stage with our latest logistics report.',
+    image: '/insights/world-resource-report.jpg'
+  },
+  {
+    name: 'Diversity and Generative AI',
+    href: '/insights/diversity-ai',
+    desc: 'See how we can help you ensure marginalized groups are included every step of the way.',
+    image: '/insights/diversity-ai.jpg'
   }
 ];

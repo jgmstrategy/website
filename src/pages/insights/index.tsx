@@ -17,16 +17,18 @@ function InsightFeatureBox({ name, href, desc, image }: insightType) {
     <Grid item xs={4}>
       <Link href={href}>
         <Paper sx={{ padding: '1rem', margin: '1rem' }} elevation={1}>
-          <Stack direction='row' justifyContent='space-between'>
+          <Stack justifyContent='space-between'>
             <Box
               width={1}
               sx={{
-                height: 100,
+                height: 120,
                 position: 'relative',
+                borderRadius: 5,
+                overflow: 'hidden',
                 marginY: '1rem'
               }}
             >
-              <Image src={image} alt='' fill />
+              <Image src={image} alt='' fill style={{ objectFit: 'cover' }} />
             </Box>
             <Typography
               sx={{
