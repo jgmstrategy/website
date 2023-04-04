@@ -20,7 +20,7 @@ export default function Profile(props: ProfileProps) {
       <Typography>{props.name}</Typography>
       <Typography>{props.title}</Typography>
       {
-        location && (
+        props.location && (
           <Typography>{props.location}</Typography>
         )
       }
