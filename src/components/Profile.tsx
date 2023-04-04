@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -75,7 +76,7 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
       </Box>
       <Typography>{props.tagline}</Typography>
       <Typography>Expertise Categories</Typography>
-      <Box>
+      <Box sx={{ paddingBottom: '2rem' }}>
         {
           props.expertise.map(({ name, href }) => (
             <Link href={href} key={name}>
@@ -84,11 +85,12 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
           ))
         }
       </Box>
-      <Container>
+      <Divider textAlign='left'>A little more about {props.name}</Divider>
+      <Container sx={{ paddingBottom: '2rem' }}>
         {props.children}
       </Container>
-      <Typography>Education</Typography>
-      <Box>
+      <Divider>Education</Divider>
+      <Box sx={{ paddingBottom: '2rem' }}>
         <Stack>
           {
             props.education.map(({ school, degree }) => (

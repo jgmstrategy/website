@@ -79,14 +79,34 @@ export const industries = [
 
 export const services = [
   {
+    name: 'Analytics',
+    href: '/services/analytics',
+    desc: 'Statistics, analytics'
+  },
+  {
+    name: 'Automation',
+    href: '/services/automation',
+    desc: 'Service automation, robotics'
+  },
+  {
     name: 'Digital Media',
     href: '/services/digital',
     desc: 'Video editing, photo editing, poster design'
   },
   {
+    name: 'E-Commerce',
+    href: '/services/ecommerce',
+    desc: 'Online sales, online shops'
+  },
+  {
     name: 'Logistics',
     href: '/services/logistics',
     desc: 'Timekeeping, software'
+  },
+  {
+    name: 'Marketing',
+    href: '/services/marketing',
+    desc: 'Marketing'
   },
   {
     name: 'Modernization',
