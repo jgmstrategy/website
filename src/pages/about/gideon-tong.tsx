@@ -7,6 +7,7 @@ export default function GideonTong() {
       title='Partner'
       tagline='Gideon is a founding partner of JGM Strategy Consulting.'
       expertise={[]}
+      education={[]}
     />
   );
 }

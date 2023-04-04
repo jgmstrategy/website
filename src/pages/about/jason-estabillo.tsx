@@ -17,6 +17,12 @@ export default function JasonEstabillo() {
           href: '/industries/restaurants'
         }
       ]}
+      education={[
+        {
+          school: 'University of California, San Diego',
+          degree: 'BA Business Economics'
+        }
+      ]}
     >
       <Typography>Long description is coming soon!</Typography>
     </Profile>

@@ -11,6 +11,11 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import { expertiseType } from '@/constants/categories';
 
+type educationType = {
+  school: string;
+  degree: string;
+};
+
 type ProfileProps = {
   name: string;
   title: string;
@@ -18,13 +23,13 @@ type ProfileProps = {
   location?: string;
   linkedin?: string;
   tagline: string;
-  expertise: Array<expertiseType>
+  expertise: Array<expertiseType>;
+  education: Array<educationType>;
 };
 
 export default function Profile(props: PropsWithChildren<ProfileProps>) {
   return (
     <Container sx={{ paddingY: '2rem' }}>
-      <Typography>This page is under construction and will be available soon.</Typography>
       <Typography>A photo of each person will be available soon.</Typography>
       <Typography>{props.name}</Typography>
       <Typography>{props.title}</Typography>
@@ -82,6 +87,19 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
       <Container>
         {props.children}
       </Container>
+      <Typography>Education</Typography>
+      <Box>
+        <Stack>
+          {
+            props.education.map(({ school, degree }) => (
+              <Box key={degree}>
+                <Typography>{school}</Typography>
+                <Typography>{degree}</Typography>
+              </Box>
+            ))
+          }
+        </Stack>
+      </Box>
     </Container>
   );
 }

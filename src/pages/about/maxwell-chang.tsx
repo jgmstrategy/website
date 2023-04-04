@@ -7,6 +7,7 @@ export default function MaxwellChang() {
       title='Partner'
       tagline='Maxwell is a founding partner of JGM Strategy Consulting.'
       expertise={[]}
+      education={[]}
     />
   );
 }
