@@ -6,6 +6,7 @@ export default function JasonEstabillo() {
   return (
     <Profile
       name='Jason Estabillo'
+      image='/about/jason.webp'
       title='Partner'
       location='San Diego, CA'
       email='jason@jgmstrategy.com'

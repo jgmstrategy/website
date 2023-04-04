@@ -1,5 +1,6 @@
 import { PropsWithChildren } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
@@ -19,6 +20,7 @@ type educationType = {
 
 type ProfileProps = {
   name: string;
+  image?: string;
   title: string;
   email?: string;
   location?: string;
@@ -31,7 +33,22 @@ type ProfileProps = {
 export default function Profile(props: PropsWithChildren<ProfileProps>) {
   return (
     <Container sx={{ paddingY: '2rem' }}>
-      <Typography>A photo of each person will be available soon.</Typography>
+      <Box
+        sx={{
+          height: 750,
+          width: 600,
+          position: 'relative',
+          overflow: 'hidden'
+        }}
+      >
+        {
+          props.image ? (
+            <Image src={props.image} alt='' fill style={{ objectFit: 'contain' }} />
+          ) : (
+            <Typography>Image Not Available</Typography>
+          )
+        }
+      </Box>
       <Typography>{props.name}</Typography>
       <Typography>{props.title}</Typography>
       {
