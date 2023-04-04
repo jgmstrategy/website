@@ -5,6 +5,8 @@ export default function MaxwellChang() {
     <Profile
       name='Maxwell Chang'
       title='Partner'
+      tagline='Maxwell is a founding partner of JGM Strategy Consulting.'
+      expertise={[]}
     />
   );
 }

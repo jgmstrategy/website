@@ -1,22 +1,31 @@
+import { PropsWithChildren } from 'react';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
+import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
+import { expertiseType } from '@/constants/categories';
 
 type ProfileProps = {
   name: string;
   title: string;
+  email?: string;
   location?: string;
   linkedin?: string;
+  tagline: string;
+  expertise: Array<expertiseType>
 };
 
-export default function Profile(props: ProfileProps) {
+export default function Profile(props: PropsWithChildren<ProfileProps>) {
   return (
     <Container sx={{ paddingY: '2rem' }}>
       <Typography>This page is under construction and will be available soon.</Typography>
+      <Typography>A photo of each person will be available soon.</Typography>
       <Typography>{props.name}</Typography>
       <Typography>{props.title}</Typography>
       {
@@ -25,11 +34,33 @@ export default function Profile(props: ProfileProps) {
         )
       }
       <Box>
-        <Stack direction='row'>
+        <Stack direction='row' spacing={2}>
+          {
+            props.email && (
+              <Link href={'mailto:' + props.email}>
+                <IconButton
+                  aria-label='email'
+                  size='large'
+                  sx={{
+                    border: '1px solid'
+                  }}
+                >
+                  <EmailIcon />
+                </IconButton>
+              </Link>
+            )
+          }
           {
             props.linkedin && (
               <Link href={props.linkedin} target='_blank'>
-                <IconButton aria-label='linkedin' size='large' color='primary'>
+                <IconButton
+                  aria-label='linkedin'
+                  size='large'
+                  color='primary'
+                  sx={{
+                    border: '1px solid'
+                  }}
+                >
                   <LinkedInIcon />
                 </IconButton>
               </Link>
@@ -37,10 +68,20 @@ export default function Profile(props: ProfileProps) {
           }
         </Stack>
       </Box>
-      <Typography>Profile picture</Typography>
-      <Typography>Short description</Typography>
-      <Typography>Expertise categories</Typography>
-      <Typography>Long description</Typography>
+      <Typography>{props.tagline}</Typography>
+      <Typography>Expertise Categories</Typography>
+      <Box>
+        {
+          props.expertise.map(({ name, href }) => (
+            <Link href={href} key={name}>
+              <Chip label={name} clickable />
+            </Link>
+          ))
+        }
+      </Box>
+      <Container>
+        {props.children}
+      </Container>
     </Container>
   );
 }

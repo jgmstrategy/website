@@ -1,3 +1,5 @@
+import Typography from '@mui/material/Typography';
+
 import Profile from '../../components/Profile';
 
 export default function JasonEstabillo() {
@@ -6,7 +8,17 @@ export default function JasonEstabillo() {
       name='Jason Estabillo'
       title='Partner'
       location='San Diego, CA'
+      email='jason@jgmstrategy.com'
       linkedin='https://www.linkedin.com/in/jsnne/'
-    />
+      tagline='Jason is a founding partner of JGM Strategy Consulting.'
+      expertise={[
+        {
+          name: 'Restaurants',
+          href: '/industries/restaurants'
+        }
+      ]}
+    >
+      <Typography>Long description is coming soon!</Typography>
+    </Profile>
   );
 }

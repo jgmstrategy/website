@@ -4,6 +4,11 @@ export type categoryType = {
   desc: string;
 };
 
+export type expertiseType = {
+  name: string;
+  href: string;
+}
+
 export const industries = [
   {
     name: 'Agriculture',

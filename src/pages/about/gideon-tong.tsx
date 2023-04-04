@@ -5,6 +5,8 @@ export default function GideonTong() {
     <Profile
       name='Gideon Tong'
       title='Partner'
+      tagline='Gideon is a founding partner of JGM Strategy Consulting.'
+      expertise={[]}
     />
   );
 }
