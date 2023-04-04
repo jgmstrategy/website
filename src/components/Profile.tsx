@@ -13,6 +13,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import { expertiseType } from '@/constants/categories';
+import styles from '../styles/Profile.module.css';
 
 type educationType = {
   school: string;
@@ -37,11 +38,16 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
       <Head>
         <title>{props.name} • JGM Strategy Consulting</title>
       </Head>
-      <Container sx={{ paddingY: '2rem' }}>
+      <Box
+        className={styles.backgroundBox + ' w-100'}
+        sx={{
+          paddingTop: '2rem',
+          height: 500
+        }}
+      >
         <Box
+          className='h-100'
           sx={{
-            height: 750,
-            width: 600,
             position: 'relative',
             overflow: 'hidden'
           }}
@@ -54,6 +60,8 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
             )
           }
         </Box>
+      </Box>
+      <Container sx={{ paddingY: '2rem' }}>
         <Typography>{props.name}</Typography>
         <Typography>{props.title}</Typography>
         {
