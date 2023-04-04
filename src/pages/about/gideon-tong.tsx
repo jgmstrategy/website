@@ -4,6 +4,7 @@ export default function GideonTong() {
   return (
     <Profile
       name='Gideon Tong'
+      title='Partner'
     />
   );
 }
