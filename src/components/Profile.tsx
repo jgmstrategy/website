@@ -40,14 +40,62 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
         <title>{props.name} • JGM Strategy Consulting</title>
       </Head>
       <Box
-        className={styles.backgroundBox + ' w-100'}
+        className={styles.backgroundBox + ' w-100 d-block d-sm-none'}
         sx={{
           paddingTop: '2rem',
           height: 500
         }}
       >
         <Grid container sx={{ height: 1, width: 1 }}>
-          <Grid item sx={{ height: 1, width: 1 }} xs={12} sm={8} md={6}>
+          <Grid item sx={{ height: 0.2, width: 1 }} xs={12} sm={4} md={6}>
+            <Container>
+              <Typography
+                style={{
+                  fontSize: 48
+                }}
+              >
+                {props.name}
+              </Typography>
+              <Typography
+                style={{
+                  fontSize: 28
+                }}
+              >
+                {props.title}
+                {
+                  props.location && ' • ' + props.location
+                }
+              </Typography>
+            </Container>
+          </Grid>
+          <Grid item sx={{ height: 0.8 }} xs={12} sm={8} md={6}>
+            <Box
+              className='h-100'
+              sx={{
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              {
+                props.image ? (
+                  <Image src={props.image} alt='' fill style={{ objectFit: 'contain' }} />
+                ) : (
+                  <Typography>Image Not Available</Typography>
+                )
+              }
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+      <Box
+        className={styles.backgroundBox + ' w-100 d-none d-sm-block'}
+        sx={{
+          paddingTop: '2rem',
+          height: 500
+        }}
+      >
+        <Grid container sx={{ height: 1, width: 1 }}>
+          <Grid item sx={{ height: 1 }} xs={12} sm={8} md={6}>
             <Box
               className='h-100'
               sx={{
@@ -66,8 +114,20 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
           </Grid>
           <Grid item sx={{ height: 1, width: 1 }} xs={12} sm={4} md={6}>
             <Box>
-              <Typography>{props.name}</Typography>
-              <Typography>{props.title}</Typography>
+              <Typography
+                style={{
+                  fontSize: 48
+                }}
+              >
+                {props.name}
+              </Typography>
+              <Typography
+                style={{
+                  fontSize: 28
+                }}
+              >
+                {props.title}
+              </Typography>
               {
                 props.location && (
                   <Typography>{props.location}</Typography>
