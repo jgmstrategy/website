@@ -48,17 +48,17 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
       >
         <Grid container sx={{ height: 1, width: 1 }}>
           <Grid item sx={{ height: 0.2, width: 1 }} xs={12} sm={4} md={6}>
-            <Container>
+            <Container className='text-center'>
               <Typography
                 style={{
-                  fontSize: 48
+                  fontSize: 50
                 }}
               >
                 {props.name}
               </Typography>
               <Typography
                 style={{
-                  fontSize: 28
+                  fontSize: 20
                 }}
               >
                 {props.title}
@@ -138,69 +138,77 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
         </Grid>
       </Box>
       <Container sx={{ paddingY: '2rem' }}>
-        <Box>
-          <Stack direction='row' spacing={2}>
-            {
-              props.email && (
-                <Link href={'mailto:' + props.email}>
-                  <IconButton
-                    aria-label='email'
-                    size='large'
-                    sx={{
-                      border: '1px solid'
-                    }}
-                  >
-                    <EmailIcon />
-                  </IconButton>
-                </Link>
-              )
-            }
-            {
-              props.linkedin && (
-                <Link href={props.linkedin} target='_blank'>
-                  <IconButton
-                    aria-label='linkedin'
-                    size='large'
-                    color='primary'
-                    sx={{
-                      border: '1px solid'
-                    }}
-                  >
-                    <LinkedInIcon />
-                  </IconButton>
-                </Link>
-              )
-            }
-          </Stack>
+        <Box sx={{ paddingBottom: '1rem' }}>
+          <Typography>
+            {props.tagline} To get in touch with this individual, click one of the buttons below:
+          </Typography>
         </Box>
-        <Typography>{props.tagline}</Typography>
-        <Typography>Expertise Categories</Typography>
-        <Box sx={{ paddingBottom: '2rem' }}>
+        <Stack direction='row' spacing={1}>
           {
-            props.expertise.map(({ name, href }) => (
-              <Link href={href} key={name}>
-                <Chip label={name} clickable />
+            props.email && (
+              <Link href={'mailto:' + props.email}>
+                <IconButton
+                  aria-label='email'
+                  size='large'
+                  sx={{
+                    border: '1px solid'
+                  }}
+                >
+                  <EmailIcon />
+                </IconButton>
               </Link>
-            ))
+            )
           }
-        </Box>
+          {
+            props.linkedin && (
+              <Link href={props.linkedin} target='_blank'>
+                <IconButton
+                  aria-label='linkedin'
+                  size='large'
+                  color='primary'
+                  sx={{
+                    border: '1px solid'
+                  }}
+                >
+                  <LinkedInIcon />
+                </IconButton>
+              </Link>
+            )
+          }
+        </Stack>
+      </Container>
+      <Container sx={{ paddingY: '1rem' }}>
+        <Stack direction='row' spacing={2}>
+          <Box sx={{ paddingBottom: '1rem' }}>
+            <Typography>Their expertise lies in the following:</Typography>
+          </Box>
+          <Box sx={{ paddingBottom: '2rem' }}>
+            {
+              props.expertise.map(({ name, href }) => (
+                <Link href={href} key={href}>
+                  <Chip label={name} clickable sx={{ margin: '5px' }} />
+                </Link>
+              ))
+            }
+          </Box>
+        </Stack>
         <Divider textAlign='left'>A little more about {props.name}</Divider>
-        <Container sx={{ paddingBottom: '2rem' }}>
+        <Container sx={{ paddingY: '2rem' }} maxWidth='md'>
           {props.children}
         </Container>
         <Divider>Education</Divider>
-        <Box sx={{ paddingBottom: '2rem' }}>
+        <Container sx={{ paddingBottom: '2rem' }} maxWidth='md'>
           <Stack>
             {
               props.education.map(({ school, degree }) => (
                 <Box key={degree}>
-                  <Typography>{school}</Typography>
-                  <Typography>{degree}</Typography>
+                  <Typography sx={{ fontWeight: 500 }}>{school}</Typography>
+                  <Typography sx={{ fontWeight: 350, fontStyle: 'italic' }}>{degree}</Typography>
                 </Box>
               ))
             }
           </Stack>
-        </Box>
+        </Container>
       </Container>
     </>
   );
