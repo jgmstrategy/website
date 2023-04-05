@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -45,30 +46,38 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
           height: 500
         }}
       >
-        <Box
-          className='h-100'
-          sx={{
-            position: 'relative',
-            overflow: 'hidden'
-          }}
-        >
-          {
-            props.image ? (
-              <Image src={props.image} alt='' fill style={{ objectFit: 'contain' }} />
-            ) : (
-              <Typography>Image Not Available</Typography>
-            )
-          }
-        </Box>
+        <Grid container sx={{ height: 1, width: 1 }}>
+          <Grid item sx={{ height: 1, width: 1 }} xs={12} sm={8} md={6}>
+            <Box
+              className='h-100'
+              sx={{
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              {
+                props.image ? (
+                  <Image src={props.image} alt='' fill style={{ objectFit: 'contain' }} />
+                ) : (
+                  <Typography>Image Not Available</Typography>
+                )
+              }
+            </Box>
+          </Grid>
+          <Grid item sx={{ height: 1, width: 1 }} xs={12} sm={4} md={6}>
+            <Box>
+              <Typography>{props.name}</Typography>
+              <Typography>{props.title}</Typography>
+              {
+                props.location && (
+                  <Typography>{props.location}</Typography>
+                )
+              }
+            </Box>
+          </Grid>
+        </Grid>
       </Box>
       <Container sx={{ paddingY: '2rem' }}>
-        <Typography>{props.name}</Typography>
-        <Typography>{props.title}</Typography>
-        {
-          props.location && (
-            <Typography>{props.location}</Typography>
-          )
-        }
         <Box>
           <Stack direction='row' spacing={2}>
             {
