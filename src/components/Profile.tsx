@@ -198,7 +198,7 @@ export default function Profile(props: PropsWithChildren<ProfileProps>) {
         </Container>
         <Divider>Education</Divider>
         <Container sx={{ paddingBottom: '2rem' }} maxWidth='md'>
-          <Stack>
+          <Stack spacing={3}>
             {
               props.education.map(({ school, degree }) => (
                 <Box key={degree}>

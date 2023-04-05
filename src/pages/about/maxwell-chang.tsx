@@ -37,6 +37,10 @@ export default function MaxwellChang() {
       education={[
         {
           school: 'University of California, San Diego',
+          degree: 'MS Electrical Engineering'
+        },
+        {
+          school: 'University of California, San Diego',
           degree: 'BS Electrical Engineering'
         }
       ]}
