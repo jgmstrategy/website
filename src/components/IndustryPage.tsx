@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Head from 'next/head';
 import Image from 'next/image';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
@@ -10,6 +10,10 @@ import Paper from '@mui/material/Paper';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+import { expertiseType } from '@/constants/categories';
+import { insightType } from '@/constants/insights';
+import { people } from '@/constants/people';
+
 type TitleDividerProps = {
   title: string;
   id?: string;
@@ -19,15 +23,30 @@ type IndustryPageProps = {
   name: string;
   backgroundImage: string;
   subtitle: string;
+  testimonials: Array<insightType>;
+  featuredInsights: Array<insightType>;
+  experience: JSX.Element;
   description?: JSX.Element;
+  featuredPartners?: Array<string>;
+  featuredServices?: Array<expertiseType>;
 };
 
-const navbarTitles = [
+const NAVBAR_TITLES = [
   'Experience',
   'Testimonials',
   'Partners',
   'Insights',
   'Services'
+];
+
+const DEFAULT_PARTNERS = [
+  'Gideon Tong',
+  'Maxwell Chang',
+  'Jason Estabillo'
+];
+
+// TODO
+const DEFAULT_SERVICES = [
 ];
 
 function InsightNavbar() {
@@ -53,7 +72,7 @@ function InsightNavbar() {
           <Button disabled>
             Skip to Section
           </Button>
-          {navbarTitles.map((title) => (
+          {NAVBAR_TITLES.map((title) => (
             <Button key={title} sx={{ color: 'orange' }} href={'#' + title.toLowerCase()}>
               {title}
             </Button>
@@ -83,6 +102,9 @@ function TitleDivider({ title, id }: TitleDividerProps) {
 export default function IndustryPage(props: IndustryPageProps) {
   return (
     <>
+      <Head>
+        <title>{props.name} Consulting by JGM Strategy</title>
+      </Head>
       <div className='bg-image' style={{ height: '40rem', overflow: 'hidden' }}>
         <Image
           src={props.backgroundImage}
@@ -127,18 +149,27 @@ export default function IndustryPage(props: IndustryPageProps) {
       </Container>
       <TitleDivider title={'Top Partners in ' + props.name} id='partners' />
       <Container>
-        <Typography>We hope to feature team members that are important here soon.</Typography>
+        {
+          props.featuredPartners ?
+            <Typography>Featured team members will show up here soon.</Typography> :
+            <Typography>The default featured team members will show up here soon.</Typography>
+        }
       </Container>
       <TitleDivider title={'Latest ' + props.name + ' Insights'} id='insights' />
       <Container>
-        <Typography>Featured Insights</Typography>
+        <Typography>We hope to display the featured insights here soon.</Typography>
       </Container>
       <TitleDivider title='How We Help' id='services' />
       <Container>
-        <Typography>Specific services we offer</Typography>
+        {
+          props.featuredServices ?
+            <Typography>We hope to have related services here soon.</Typography> :
+            <Typography>We hope to show the default services here soon.</Typography>
+        }
       </Container>
-      <Container>
-        <Typography>Contact form</Typography>
+      <TitleDivider title='Ready to get in touch?' />
+      <Container sx={{ paddingBottom: '3rem' }}>
+        <Typography>We hope to have a contact form here soon.</Typography>
       </Container>
     </>
   );

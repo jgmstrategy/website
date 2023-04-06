@@ -18,6 +18,9 @@ export default function Agriculture() {
       name='Agriculture'
       backgroundImage='/industries/agriculture.webp'
       subtitle='Take your production to the next level'
+      testimonials={[]}
+      featuredInsights={[]}
+      experience={<></>}
       description={<AgricultureDescription />}
     />
   );
