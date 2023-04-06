@@ -1,8 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
+import Paper from '@mui/material/Paper';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
@@ -13,6 +17,7 @@ type TitleDividerProps = {
 
 type IndustryPageProps = {
   name: string;
+  backgroundImage: string;
   subtitle: string;
   description?: JSX.Element;
 };
@@ -49,11 +54,9 @@ function InsightNavbar() {
             Skip to Section
           </Button>
           {navbarTitles.map((title) => (
-            <Link key={title} href={'#' + title.toLowerCase()}>
-              <Button sx={{ color: 'orange' }}>
-                {title}
-              </Button>
-            </Link>
+            <Button key={title} sx={{ color: 'orange' }} href={'#' + title.toLowerCase()}>
+              {title}
+            </Button>
           ))
           }
         </Toolbar>
@@ -80,9 +83,33 @@ function TitleDivider({ title, id }: TitleDividerProps) {
 export default function IndustryPage(props: IndustryPageProps) {
   return (
     <>
-      <Typography>We hope to display a cool background image here soon.</Typography>
-      <Typography>{props.name}</Typography>
-      <Typography>{props.subtitle}</Typography>
+      <div className='bg-image' style={{ height: '40rem', overflow: 'hidden' }}>
+        <Image
+          src={props.backgroundImage}
+          alt=''
+          style={{ objectFit: 'cover' }}
+          fill
+        />
+        <div className='mask'>
+          <div className='d-flex align-items-center h-100 ps-4'>
+            <Paper elevation={6}>
+              <Card sx={{ minWidth: 275 }}>
+                <CardContent>
+                  <Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
+                    Industry Specialization
+                  </Typography>
+                  <Typography variant='h5' component='div' className='pb-3'>
+                    {props.name}
+                  </Typography>
+                  <Typography variant='body2'>
+                    {props.subtitle}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Paper>
+          </div>
+        </div>
+      </div>
       <InsightNavbar />
       {
         props.description &&
@@ -110,7 +137,9 @@ export default function IndustryPage(props: IndustryPageProps) {
       <Container>
         <Typography>Specific services we offer</Typography>
       </Container>
-      <Typography>Contact form</Typography>
+      <Container>
+        <Typography>Contact form</Typography>
+      </Container>
     </>
   );
 }

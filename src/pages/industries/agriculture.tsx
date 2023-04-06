@@ -16,7 +16,8 @@ export default function Agriculture() {
   return (
     <IndustryPage
       name='Agriculture'
-      subtitle='Get ahead of production with our consultation'
+      backgroundImage='/industries/agriculture.webp'
+      subtitle='Take your production to the next level'
       description={<AgricultureDescription />}
     />
   );
