@@ -1,13 +1,16 @@
 import Typography from '@mui/material/Typography';
 
 import Profile from '../../components/Profile';
+import { people } from '@/constants/people';
+
+const KEY = 'Jason Estabillo';
 
 export default function JasonEstabillo() {
   return (
     <Profile
-      name='Jason Estabillo'
+      name={people[KEY].name}
       image='/about/jason.webp'
-      title='Partner'
+      title={people[KEY].role}
       location='San Diego, CA'
       email='jason@jgmstrategy.com'
       linkedin='https://www.linkedin.com/in/jsnne/'
