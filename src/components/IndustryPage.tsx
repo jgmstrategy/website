@@ -9,7 +9,7 @@ type TitleDividerProps = {
 type IndustryPageProps = {
   name: string;
   subtitle: string;
-  description: JSX.Element;
+  description?: JSX.Element;
 };
 
 function TitleDivider({ title }: TitleDividerProps) {
@@ -33,21 +33,17 @@ export default function IndustryPage(props: IndustryPageProps) {
       <Typography>{props.name}</Typography>
       <Typography>{props.subtitle}</Typography>
       <Typography>We hope to have a quick navbar here later</Typography>
-      <Container>
-        {props.description}
-      </Container>
+      {
+        props.description &&
+        <Container>
+          {props.description}
+        </Container>
+      }
       <TitleDivider title='Experience' />
       <Container>
         <Typography>We hope to put the experience here soon.</Typography>
       </Container>
-      <Divider
-        sx={{
-          fontSize: 30,
-          fontWeight: 600,
-          paddingTop: '2rem'
-        }}>
-        Testimonials
-      </Divider>
+      <TitleDivider title='Testimonials' />
       <Container>
         <Typography>We hope to put the testimonials here soon.</Typography>
       </Container>
@@ -55,14 +51,7 @@ export default function IndustryPage(props: IndustryPageProps) {
       <Container>
         <Typography>We hope to feature team members that are important here soon.</Typography>
       </Container>
-      <Divider
-        sx={{
-          fontSize: 30,
-          fontWeight: 600,
-          paddingTop: '2rem'
-        }}>
-        Latest {props.name} Insights
-      </Divider>
+      <TitleDivider title={'Latest ' + props.name + ' Insights'} />
       <Container>
         <Typography>Featured Insights</Typography>
       </Container>

@@ -15,11 +15,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 
-type PageItem = {
-  name: string;
-  href: string;
-};
-
 const pages = [
   {
     name: 'Industries',
