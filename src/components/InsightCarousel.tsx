@@ -9,16 +9,16 @@ import Box from '@mui/material/Box';
 export default function InsightCarousel() {
   const items = [
     {
-      name: 'Better Patient Experiences',
-      description: 'Learn how we help build better lives in the dentist office',
-      image: '/insights/better-patient-experiences.jpg',
-      href: '/insights/better-patient-experiences'
-    },
-    {
       name: 'World Resource Report 2023',
       description: 'Navigate the constantly changing logistics landscape',
       image: '/insights/world-resource-report.jpg',
       href: '/insights/world-resource-report'
+    },
+    {
+      name: 'Better Patient Experiences',
+      description: 'Learn how we help build better lives in the dentist office',
+      image: '/insights/better-patient-experiences.jpg',
+      href: '/insights/better-patient-experiences'
     },
     {
       name: 'Diversity and Generative AI',
