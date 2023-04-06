@@ -69,7 +69,7 @@ function TitleDivider({ title, id }: TitleDividerProps) {
       sx={{
         fontSize: 30,
         fontWeight: 600,
-        paddingTop: '2rem'
+        paddingTop: '3rem'
       }}
     >
       {title}

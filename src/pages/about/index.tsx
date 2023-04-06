@@ -11,27 +11,7 @@ import Typography from '@mui/material/Typography';
 
 import ClientCareerDoubleBox from '../../components/ClientCareerDoubleBox';
 import ProfileFeature from '../../components/ProfileFeature';
-
-const profiles = [
-  {
-    name: 'Jason Estabillo',
-    role: 'Founding Partner',
-    image: '/about/jason.jpg',
-    href: '/about/jason-estabillo'
-  },
-  {
-    name: 'Gideon Tong',
-    role: 'Founding Partner',
-    image: '/about/gideon.jpg',
-    href: '/about/gideon-tong'
-  },
-  {
-    name: 'Maxwell Chang',
-    role: 'Founding Partner',
-    image: '/about/maxwell.jpg',
-    href: '/about/maxwell-chang'
-  }
-];
+import { people } from '@/constants/people';
 
 export default function About() {
   return (
@@ -96,7 +76,7 @@ export default function About() {
           }}
         >
           {
-            profiles.map(({ name, role, image, href }) => (
+            Object.values(people).map(({ name, role, image, href }) => (
               <ProfileFeature
                 key={name}
                 name={name}
