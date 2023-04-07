@@ -28,10 +28,7 @@ export default function BetterPatientExperiences() {
       <ul>
         <li>
           <Typography>
-            <Typography sx={{ fontWeight: 500 }}>
-              Entertainment:
-            </Typography>
-            Waiting for a dental appointment can be boring, especially for children.
+            Entertainment: Waiting for a dental appointment can be boring, especially for children.
             Offering WiFi can provide patients with access to a wide range of
             entertainment options, such as streaming videos, playing games,
             or reading e-books. Patients can use their own devices or use

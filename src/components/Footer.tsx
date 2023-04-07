@@ -157,6 +157,9 @@ export default function Footer() {
                 <Link href='/privacy' className='text-white me-4'>
                   Privacy policy
                 </Link>
+                <Link href='/dashboard/login' className='text-white me-4'>
+                  Dashboard
+                </Link>
               </div>
             </MDBRow>
           </section>
