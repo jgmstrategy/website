@@ -81,8 +81,8 @@ export default function About() {
                 key={name}
                 name={name}
                 role={role}
-                image={image}
-                href={href}
+                image={image ? image : ''}
+                href={href ? href: ''}
               />
             ))
           }
