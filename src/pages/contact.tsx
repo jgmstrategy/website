@@ -18,6 +18,8 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
+const CONTACT_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSe96YmOoBiN6b5UdC5S6_TbeL7TxFrUiqVd5xj9B6ctji2iLA/formResponse';
+
 type TitleTextProps = {
   text: string;
 };
@@ -276,7 +278,8 @@ export default function Contact() {
               label='Message'
             />
             <Typography>
-              Captcha is currently not required for form submission, but will be enabled soon.
+              The captcha below is currently not required for form submission, so you can
+              safely ignore it.
             </Typography>
             <HCaptcha
               sitekey='10000000-ffff-ffff-ffff-000000000001'

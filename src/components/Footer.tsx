@@ -19,8 +19,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 
-const emailForm = 'https://docs.google.com/forms/u/3/d/e/1FAIpQLSfFPzrarHsZid29fCHc98VKfCPC5x21htyO2gOklX6mDw78nQ/formResponse';
-const emailName = 'entry.701359486';
+const EMAIL_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSfFPzrarHsZid29fCHc98VKfCPC5x21htyO2gOklX6mDw78nQ/formResponse';
+const EMAIL_NAME = 'entry.701359486';
 
 export default function Footer() {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -38,9 +38,9 @@ export default function Footer() {
     }
 
     const formData = new FormData();
-    formData.append(emailName, emailRef.current.value);
+    formData.append(EMAIL_NAME, emailRef.current.value);
     emailRef.current.value = '';
-    fetch(emailForm, {
+    fetch(EMAIL_FORM, {
       method: 'POST',
       mode: 'no-cors',
       body: formData,
@@ -83,27 +83,27 @@ export default function Footer() {
               </Link>
             </div>
             <div>
-              <a
+              <Link
                 href='https://twitter.com/JGMStrategy'
                 className='me-4 text-reset'
                 target='_blank'
               >
                 <MDBIcon fab icon='twitter' />
-              </a>
-              <a
+              </Link>
+              <Link
                 href='https://www.linkedin.com/company/jgmstrategy'
                 className='me-4 text-reset'
                 target='_blank'
               >
                 <MDBIcon fab icon='linkedin' />
-              </a>
-              <a
+              </Link>
+              <Link
                 href='https://github.com/jgmstrategy'
                 className='me-4 text-reset'
                 target='_blank'
               >
                 <MDBIcon fab icon='github' />
-              </a>
+              </Link>
             </div>
           </section>
 
