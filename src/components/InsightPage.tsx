@@ -1,17 +1,23 @@
 import { PropsWithChildren } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+
+import { people, PeopleOption } from '@/constants/people';
 
 type InsightPageProps = {
   title: string;
   image: string;
   description: string;
   subheader: string;
+  authors: Array<PeopleOption>;
 }
 
 export default function InsightPage(props: PropsWithChildren<InsightPageProps>) {
@@ -55,13 +61,25 @@ export default function InsightPage(props: PropsWithChildren<InsightPageProps>) 
         </div>
       </div>
       <Container maxWidth='md' sx={{ paddingTop: '6rem', paddingBottom: '2rem' }}>
-        <Typography
+        <Box
           sx={{
             paddingY: '1rem'
           }}
         >
-          We hope to display the list of authors here for you soon.
-        </Typography>
+          <Stack direction='row' spacing={2} alignItems='center'>
+            <Typography>Published by:</Typography>
+            {
+              props.authors.map((author) => (
+                <Box key={author}>
+                  <Stack direction='row' alignItems='center' spacing={1}>
+                    <Avatar alt='' src={people[author].avatar ? people[author].avatar : ''} />
+                    <Typography>{people[author].name}</Typography>
+                  </Stack>
+                </Box>
+              ))
+            }
+          </Stack>
+        </Box>
         <Typography
           sx={{
             paddingY: '1rem'
