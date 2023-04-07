@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -8,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 
 export default function JobApplicationForm() {
   const [age, setAge] = useState('');
@@ -26,6 +28,15 @@ export default function JobApplicationForm() {
       }}
     >
       <Stack spacing={2}>
+        <Typography>
+          Please note, the form is currently under construction. Submissions
+          will not be received. If you would like to apply (and maybe help
+          us finish this form!), please email us at{' '}
+          <Link href='mailto:careers@jgmstrategy.com'>
+            careers@jgmstrategy.com
+          </Link>
+          {' '}instead with your resume.
+        </Typography>
         <TextField
           required
           id='name'
