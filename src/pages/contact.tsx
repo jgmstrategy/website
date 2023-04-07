@@ -250,7 +250,7 @@ export default function Contact() {
                   alumni@jgmstrategy.com
                 </Link>
               </Typography>
-              <ActionButton text='Log in to dashboard' href='' />
+              <ActionButton text='Log in to dashboard' href='/dashboard/login' />
             </Grid>
             <Grid item xs={1}>
               <TitleText text='Questions?' />
