@@ -7,6 +7,7 @@ export default function WorldResourceReport() {
       image='/insights/world-resource-report.jpg'
       description='Navigate the constantly changing logistics landscape'
       subheader='Global Report'
+      authors={['Gideon Tong']}
     >
       <p>Content</p>
     </InsightPage>

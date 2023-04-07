@@ -9,7 +9,10 @@ export default function BetterPatientExperiences() {
       image='/insights/better-patient-experiences.jpg'
       description='Keeping the stress levels at an all-time low'
       subheader='Healthcare Insight'
-      authors={['Gideon Tong', 'Maxwell Chang']}
+      authors={
+        ['Gideon Tong',
+        'Maxwell Chang'
+      ]}
     >
       <Typography sx={{ paddingY: '1rem' }}>
         Going to the dentist can be a stressful experience for many patients,
