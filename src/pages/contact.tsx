@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { FormEvent, useState, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import FormControl from '@mui/material/FormControl';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
@@ -19,6 +23,21 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const CONTACT_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSe96YmOoBiN6b5UdC5S6_TbeL7TxFrUiqVd5xj9B6ctji2iLA/formResponse';
+const CONTACT_NAME = 'entry.1611799900';
+const CONTACT_EMAIL = 'entry.70122695';
+const CONTACT_REASON = 'entry.1147603373';
+const CONTACT_MESSAGE = 'entry.1790957034';
+const REASONS = [
+  'New business inquiry',
+  'Partner with us',
+  'Press relations',
+  'Speaker relations',
+  'Employee relations',
+  'Alumni relations',
+  'Hiring and career information',
+  'Technical support or incident',
+  'Anything else or not listed above'
+];
 
 type TitleTextProps = {
   text: string;
@@ -43,6 +62,9 @@ type ActionButtonProps = {
   href: string;
 };
 
+function humanReadableReason(reason: string) {
+}
+
 function ActionButton({ text, href }: ActionButtonProps) {
   return (
     <Link href={href}>
@@ -60,9 +82,41 @@ function ActionButton({ text, href }: ActionButtonProps) {
 
 export default function Contact() {
   const [reason, setReason] = useState('');
+  const [open, setOpen] = useState(false);
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLInputElement>(null);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleChange = (event: SelectChangeEvent) => {
     setReason(event.target.value);
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+
+    if (nameRef.current == null) return;
+    if (emailRef.current == null) return;
+    if (messageRef.current == null) return;
+
+    const formData = new FormData();
+    formData.append(CONTACT_NAME, nameRef.current.value);
+    formData.append(CONTACT_EMAIL, emailRef.current.value);
+    formData.append(CONTACT_REASON, reason);
+    formData.append(CONTACT_MESSAGE, messageRef.current.value);
+    nameRef.current.value = '';
+    emailRef.current.value = '';
+    messageRef.current.value = '';
+    fetch(CONTACT_FORM, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: formData,
+    });
+
+    setOpen(true);
   };
 
   return (
@@ -72,6 +126,25 @@ export default function Contact() {
         <meta name='description' content='Let us know how JGM Strategy can help you' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
+      <div>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby='alert-dialog-title'
+          aria-describedby='alert-dialog-description'
+        >
+          <DialogTitle id='alert-dialog-title'>
+            Thanks for getting in touch!
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id='alert-dialog-description'>
+              A representative or partner at JGM Strategy will reach out to you as soon as
+              possible. If you do not receive a reply within 2 business days, please feel
+              free to email us.
+            </DialogContentText>
+          </DialogContent>
+        </Dialog>
+      </div>
       <Container
         sx={{
           paddingTop: '2rem'
@@ -233,7 +306,7 @@ export default function Contact() {
           manager, however. Email us at:{' '}
           <Link href='mailto:inquries@jgmstrategy.com'>inquires@jgmstrategy.com</Link>.
         </Typography>
-        <Box component='form'>
+        <form onSubmit={handleSubmit}>
           <Stack spacing={2}>
             <Stack spacing={2} direction='row'>
               <TextField
@@ -241,6 +314,7 @@ export default function Contact() {
                 id='name'
                 label='Name'
                 variant='standard'
+                inputRef={nameRef}
               />
               <TextField
                 required
@@ -248,6 +322,7 @@ export default function Contact() {
                 label='Email'
                 variant='standard'
                 type='email'
+                inputRef={emailRef}
               />
             </Stack>
             <FormControl required variant='standard' sx={{ m: 1, minWidth: 120 }}>
@@ -259,15 +334,11 @@ export default function Contact() {
                 onChange={handleChange}
                 label='Reason for Contact'
               >
-                <MenuItem value='new_business'>New business inquiry</MenuItem>
-                <MenuItem value='partner'>Partner with us</MenuItem>
-                <MenuItem value='press'>Press relations</MenuItem>
-                <MenuItem value='speaker'>Speaker relations</MenuItem>
-                <MenuItem value='employee'>Employee relations</MenuItem>
-                <MenuItem value='alumni'>Alumni relations</MenuItem>
-                <MenuItem value='hr'>Hiring and career information</MenuItem>
-                <MenuItem value='support'>Technical support or incident</MenuItem>
-                <MenuItem value='other'>Anything else or not listed above</MenuItem>
+                {
+                  REASONS.map((r) => (
+                    <MenuItem key={r} value={r}>{r}</MenuItem>
+                  ))
+                }
               </Select>
             </FormControl>
             <TextField
@@ -276,6 +347,7 @@ export default function Contact() {
               rows={6}
               id='name'
               label='Message'
+              inputRef={messageRef}
             />
             <Typography>
               The captcha below is currently not required for form submission, so you can
@@ -285,9 +357,9 @@ export default function Contact() {
               sitekey='10000000-ffff-ffff-ffff-000000000001'
               onVerify={(token, ekey) => { return; }}
             />
-            <Button variant='contained'>Submit</Button>
+            <Button variant='contained' type='submit'>Submit</Button>
           </Stack>
-        </Box>
+        </form>
       </Container>
     </>
   );
