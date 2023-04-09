@@ -15,7 +15,7 @@ function AgricultureDescription() {
 function AgricultureExperience() {
   return (
     <>
-      <Typography>We hope to put something here soon.</Typography>
+      <Typography>We hope to put our experience here soon.</Typography>
     </>
   );
 }
