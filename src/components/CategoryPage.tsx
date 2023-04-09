@@ -151,7 +151,7 @@ export default function CategoryPage(props: PropsWithChildren<CategoryPageProps>
       {props.children}
       <TitleDivider title='Experience' id='experience' />
       <Container>
-        <Typography>We hope to put the experience here soon.</Typography>
+        {props.experience}
       </Container>
       <TitleDivider title='Testimonials' id='testimonials' />
       <Container>

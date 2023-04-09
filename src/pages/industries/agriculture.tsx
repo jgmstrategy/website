@@ -12,6 +12,14 @@ function AgricultureDescription() {
   );
 }
 
+function AgricultureExperience() {
+  return (
+    <>
+      <Typography>We hope to put something here soon.</Typography>
+    </>
+  );
+}
+
 export default function Agriculture() {
   return (
     <IndustryPage
@@ -20,7 +28,7 @@ export default function Agriculture() {
       subtitle='Take your production to the next level'
       testimonials={[]}
       featuredInsights={[]}
-      experience={<></>}
+      experience={<AgricultureExperience />}
       description={<AgricultureDescription />}
     />
   );
