@@ -6,7 +6,7 @@ function AgricultureDescription() {
   return (
     <>
       <Typography>
-        We hope to have a description of our industry and services we offer here soon. text
+        We hope to have a description of our industry and services we offer here soon.
       </Typography>
     </>
   );
