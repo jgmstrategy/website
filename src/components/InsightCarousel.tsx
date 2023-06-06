@@ -9,16 +9,16 @@ import Box from '@mui/material/Box';
 export default function InsightCarousel() {
   const items = [
     {
+      name: 'House Passes Debt Ceiling Limit',
+      description: 'Debt limit bill passed amidst concerns.',
+      image: 'https://csis-website-prod.s3.amazonaws.com/s3fs-public/styles/1200x522/s3/publication/GettyImages-83951850.jpg',
+      href: '/insights/debt-ceiling-limit'
+    },
+    {
       name: 'World Resource Report 2023',
       description: 'Navigate the constantly changing logistics landscape',
       image: '/insights/world-resource-report.jpg',
       href: '/insights/world-resource-report'
-    },
-    {
-      name: 'Better Patient Experiences',
-      description: 'Learn how we help build better lives in the dentist office',
-      image: '/insights/better-patient-experiences.jpg',
-      href: '/insights/better-patient-experiences'
     },
     {
       name: 'Diversity and Generative AI',
