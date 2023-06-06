@@ -7,6 +7,12 @@ export type insightType = {
 
 export const insights = [
   {
+    name: 'House Passes Debt Ceiling Limit',
+    href: '/insights/debt-ceiling-limit',
+    desc: 'Debt limit bill passed amidst concerns.',
+    image: 'https://csis-website-prod.s3.amazonaws.com/s3fs-public/styles/1200x522/s3/publication/GettyImages-83951850.jpg'
+  },
+  {
     name: 'Better Patient Experiences',
     href: '/insights/better-patient-experiences',
     desc: 'Learn how JGM Strategy is able to keep stress levels low in the waiting room.',
