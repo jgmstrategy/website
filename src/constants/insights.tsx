@@ -19,6 +19,12 @@ export const insights = [
     image: 'https://cdn.shopify.com/s/files/1/0746/2561/files/wall_street_1920_large.jpg'
   },
   {
+    name: 'Compromise Agreement on Debt Ceiling',
+    href: '/insights/debt-ceiling-compromise',
+    desc: 'Near Compromise Agreement',
+    image: 'https://portal.ehawaii.gov/assets/webp/page/government/federal/executive.webp'
+  },
+  {
     name: 'Better Patient Experiences',
     href: '/insights/better-patient-experiences',
     desc: 'Learn how JGM Strategy is able to keep stress levels low in the waiting room.',
