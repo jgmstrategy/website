@@ -15,10 +15,10 @@ export default function InsightCarousel() {
       href: '/insights/debt-ceiling-limit'
     },
     {
-      name: 'World Resource Report 2023',
-      description: 'Navigate the constantly changing logistics landscape',
-      image: '/insights/world-resource-report.jpg',
-      href: '/insights/world-resource-report'
+      name: 'May Jobs Report',
+      description: 'Surpassing expecatations, but really?',
+      image: 'https://cdn.shopify.com/s/files/1/0746/2561/files/wall_street_1920_large.jpg',
+      href: '/insights/2023-may-jobs-report'
     },
     {
       name: 'Diversity and Generative AI',
