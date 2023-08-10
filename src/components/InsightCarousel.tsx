@@ -21,10 +21,10 @@ export default function InsightCarousel() {
       href: '/insights/2023-may-jobs-report'
     },
     {
-      name: 'Diversity and Generative AI',
-      description: 'Making sure marginalized groups do not get left behind',
-      image: '/insights/diversity-ai.jpg',
-      href: '/insights/diversity-ai'
+      name: 'Compromise Agreement on Debt Ceiling',
+      description: 'Near Compromise Agreement',
+      image: 'https://portal.ehawaii.gov/assets/webp/page/government/federal/executive.webp',
+      href: '/insights/debt-ceiling-compromise'
     }
   ];
 
