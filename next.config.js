@@ -11,6 +11,18 @@ const nextConfig = {
         hostname: '*.s3.amazonaws.com',
         port: '',
         pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+        port: '',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'portal.ehawaii.gov',
+        port: '',
+        pathname: '/**'
       }
     ]
   }
